@@ -5,3 +5,5 @@ ly-build/
 .vs/
 Demos/x64/
 x64/
+Demos/Demos.vcxproj.filters
+Demos/Demos.vcxproj.user
