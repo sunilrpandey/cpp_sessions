@@ -131,27 +131,28 @@
   <ItemGroup>
     <ClCompile Include="..\include\employee.cpp" />
     <ClCompile Include="..\include\KString.cpp" />
-    <ClCompile Include="custom_shared_pointer.h" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="file_manger_demo.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\common.h" />
+    <ClInclude Include="..\include\custom_shared_pointer.h" />
+    <ClInclude Include="..\include\custom_unique_pointer.h" />
     <ClInclude Include="..\include\employee.h" />
     <ClInclude Include="..\include\friends.h" />
     <ClInclude Include="..\include\KString.h" />
+    <ClInclude Include="..\include\smart_pointer.h" />
     <ClInclude Include="..\include\two_d_array_mgr.h" />
     <ClInclude Include="demo_array.h" />
     <ClInclude Include="demo_custom_smart_pointer.h" />
     <ClInclude Include="demo_employee.h" />
+    <ClInclude Include="demo_enums.h" />
     <ClInclude Include="demo_friends.h" />
     <ClInclude Include="demo_inheritance.h" />
     <ClInclude Include="demo_kstring.h" />
     <ClInclude Include="demo_misc.h" />
     <ClInclude Include="demo_templates.h" />
-    <ClInclude Include="smart_pointer.h" />
     <ClInclude Include="templates_basics.h" />
-    <ClInclude Include="unique_pointer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -8,29 +8,7 @@
 #include "demo_friends.h"
 #include "demo_templates.h"
 #include "demo_custom_smart_pointer.h"
-
-
-
-void demoEnum(Color selectedColor)
-{
-	switch (selectedColor) {
-	case RED:
-		cout << "The selected color is red." << endl;
-		break;
-	case GREEN:
-		cout << "The selected color is green." << endl;
-		break;
-	case BLUE:
-		cout << "The selected color is blue." << endl;
-		break;
-	default:
-		cout << "Invalid color selection." << endl;
-		break;
-	}
-}
-
-
-
+#include "demo_enums.h"
 
 int main()
 {
@@ -63,6 +41,7 @@ int main()
 	demo_templates();
 	
 	demoPointer2ConstAndConstPointer();
+	demoEnum(RED);
 	
 	demoSmartPointer();	
 	demoUniquePointer();
