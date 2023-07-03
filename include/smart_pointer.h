@@ -54,20 +54,4 @@ private:
 	T* ptr;
 };
 
-void demoSmartPointer()
-{
-	{
-		Corp* p = new Corp(25);
-		p->print();
-	}
-	{
-		SmartCorpPointer corpPtr(new Corp(25));
-		corpPtr->print();
-	}
-	{
-		SmartPointer<Corp> smrtPtr(new Corp(25));
-		smrtPtr->print();
-
-	}
-}
 

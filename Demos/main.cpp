@@ -6,9 +6,7 @@
 #include "demo_kstring.h"
 #include "demo_misc.h"
 #include "demo_friends.h"
-#include "templates_basics.h"
-#include "smart_pointer.h"
-#include "unique_pointer.h"
+#include "demo_templates.h"
 #include "demo_custom_smart_pointer.h"
 
 
@@ -61,7 +59,7 @@ int main()
 	fhd.demo_filehandling_with_class_objects();
 
 	
-	
+	*/
 	demo_templates();
 	
 	demoPointer2ConstAndConstPointer();
@@ -70,7 +68,7 @@ int main()
 	demoUniquePointer();
 	demoSharedPointer();
 
-	*/
+	
 	
 
 
