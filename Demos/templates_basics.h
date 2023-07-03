@@ -1,5 +1,5 @@
 #pragma once
-#include "KString.h"
+#include "KString.h" 
 
 template <typename T>
 T Max(T a, T b)
