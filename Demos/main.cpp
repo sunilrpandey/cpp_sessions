@@ -9,7 +9,9 @@
 #include "demo_templates.h"
 #include "demo_custom_smart_pointer.h"
 #include "demo_enums.h"
-
+#include "demo_smart_pointers.h"
+#include "demo_initializer_list.h"
+#include "demo_auto_few_algo.h"
 int main()
 {
 		
@@ -37,7 +39,6 @@ int main()
 	fhd.demo_filehandling_with_class_objects();
 
 	
-	*/
 	demo_templates();
 	
 	demoPointer2ConstAndConstPointer();
@@ -47,16 +48,13 @@ int main()
 	demoUniquePointer();
 	demoSharedPointer();
 
-	
-	
-
-
-
-
 	demo_templates();
-
 	
+	ns_sharedptrs::demo();
+	demoIntializerList();
+	*/
 	
+	demoAutoAndFewAlgo();
 
 
 
