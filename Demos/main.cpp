@@ -13,6 +13,7 @@
 #include "demo_initializer_list.h"
 #include "demo_auto_few_algo.h"
 #include "demo_lambda_func.h"
+#include "demo_user_defined_literals.h"
 
 int main()
 {
@@ -55,10 +56,12 @@ int main()
 	ns_sharedptrs::demo();
 	demoIntializerList();
 	
-	demoAutoAndFewAlgo();
+	demoAutoAndFewAlgo();	 
 	
-	*/
 	demoLambdaFunc();
+	*/
+	
+	demoUserDefinedLiterals(); 
 
 
 
