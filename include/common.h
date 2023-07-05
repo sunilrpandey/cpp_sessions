@@ -1,5 +1,7 @@
 #pragma once
 #include <iostream>
+#include <algorithm>
+#include <functional>
 using namespace std;
 
 #define NUM_ROWS 2

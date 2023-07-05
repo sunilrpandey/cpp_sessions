@@ -67,8 +67,9 @@ int main()
 
 	demoExceptionHandling();	 
 	ns_wkptr::demo(); 
-	*/
 	ns_move_semantics::demo();
+	*/
+	ns_misc::demo();
 	return 0; 
 }    
- 
+  
