@@ -15,7 +15,8 @@
 #include "demo_lambda_func.h"
 #include "demo_user_defined_literals.h"
 #include "demo_exception_handling.h"
-#include "demo_week_ptr.h"
+#include "demo_weak_ptr.h"
+#include "demo_LValue_RValue.h"
 
 int main()
 {
@@ -65,7 +66,9 @@ int main()
 	demoUserDefinedLiterals(); 
 
 	demoExceptionHandling();	 
-	*/
 	ns_wkptr::demo(); 
+	*/
+	ns_move_semantics::demo();
 	return 0; 
 }    
+ 
