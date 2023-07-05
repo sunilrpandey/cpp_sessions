@@ -15,6 +15,8 @@
 #include "demo_lambda_func.h"
 #include "demo_user_defined_literals.h"
 #include "demo_exception_handling.h"
+#include "demo_week_ptr.h"
+
 int main()
 {
 		
@@ -62,8 +64,8 @@ int main()
 	 
 	demoUserDefinedLiterals(); 
 
-	*/
 	demoExceptionHandling();	 
-	
-	return 0;
-} 
+	*/
+	ns_wkptr::demo(); 
+	return 0; 
+}    
