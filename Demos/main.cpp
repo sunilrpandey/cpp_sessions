@@ -47,25 +47,20 @@ int main()
 	
 	demo_templates();
 	
-	demoPointer2ConstAndConstPointer();
 	demoEnum(RED);
 	
+	//Custom Smart Pointer
 	demoSmartPointer();	
-	demoUniquePointer();
-	demoSharedPointer();
-
-	demo_templates();
+	demoCustomUniquePointer();
+	demoCustomSharedPointer();
+		
+	demoExceptionHandling();	 
 	
 	ns_sharedptrs::demo();
 	demoIntializerList();
-	
-	demoAutoAndFewAlgo();	 
-	
-	demoLambdaFunc();
-	 
+	demoAutoAndFewAlgo();	 	
+	demoLambdaFunc();	 
 	demoUserDefinedLiterals(); 
-
-	demoExceptionHandling();	 
 	ns_wkptr::demo(); 
 	ns_move_semantics::demo();
 	*/

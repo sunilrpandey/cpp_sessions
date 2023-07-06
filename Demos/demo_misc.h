@@ -55,7 +55,8 @@ namespace ns_misc {
      
     void demo() 
     {
+        verifyArrayPassedbyRef();
+        demoPointer2ConstAndConstPointer();
         demoBind();
-
     }
 };
