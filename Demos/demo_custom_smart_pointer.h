@@ -20,7 +20,7 @@ void demoSmartPointer()
 	}
 }
 
-void demoSharedPointer()
+void demoCustomSharedPointer()
 {
 	SharedPointer<int> sptr(new int(42));
 	//SharedPointer<int> sptr = make_shared_pointer<int>(42);
@@ -47,7 +47,7 @@ void demoSharedPointer()
 		cout << "\nvalue at uptr3 : " << *uptr3 << "  count : " << uptr3.getCount();;
 	}
 }
-void demoUniquePointer()
+void demoCustomUniquePointer()
 {
 	UniquePointer<int> uptr(new int(42));
 	cout << *uptr << endl;

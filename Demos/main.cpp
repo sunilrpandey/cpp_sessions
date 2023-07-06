@@ -17,6 +17,7 @@
 #include "demo_exception_handling.h"
 #include "demo_weak_ptr.h"
 #include "demo_LValue_RValue.h"
+#include "demo_move_semantics.h"
 
 int main()
 {
@@ -62,9 +63,11 @@ int main()
 	demoLambdaFunc();	 
 	demoUserDefinedLiterals(); 
 	ns_wkptr::demo(); 
-	ns_move_semantics::demo();
-	*/
 	ns_misc::demo();
+	*/
+	ns_move_semantics::demoRValue();
+	ns_move_semantics::demoMoveSemantics() ;
+
 	return 0; 
 }    
   

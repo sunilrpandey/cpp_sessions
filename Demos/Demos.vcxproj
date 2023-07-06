@@ -105,7 +105,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpp14</LanguageStandard>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -144,14 +144,23 @@
     <ClInclude Include="..\include\smart_pointer.h" />
     <ClInclude Include="..\include\two_d_array_mgr.h" />
     <ClInclude Include="demo_array.h" />
+    <ClInclude Include="demo_auto_few_algo.h" />
     <ClInclude Include="demo_custom_smart_pointer.h" />
     <ClInclude Include="demo_employee.h" />
     <ClInclude Include="demo_enums.h" />
+    <ClInclude Include="demo_exception_handling.h" />
     <ClInclude Include="demo_friends.h" />
     <ClInclude Include="demo_inheritance.h" />
+    <ClInclude Include="demo_initializer_list.h" />
     <ClInclude Include="demo_kstring.h" />
+    <ClInclude Include="demo_lambda_func.h" />
+    <ClInclude Include="demo_LValue_RValue.h" />
     <ClInclude Include="demo_misc.h" />
+    <ClInclude Include="demo_move_semantics.h" />
+    <ClInclude Include="demo_smart_pointers.h" />
     <ClInclude Include="demo_templates.h" />
+    <ClInclude Include="demo_user_defined_literals.h" />
+    <ClInclude Include="demo_week_ptr.h" />
     <ClInclude Include="templates_basics.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

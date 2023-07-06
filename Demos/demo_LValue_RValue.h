@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include "common.h"
 using namespace std;
 
 namespace ns_move_semantics {
@@ -39,12 +40,13 @@ namespace ns_move_semantics {
 
         // constructor 
         CppRobot(const string& str = "") :name_(str) {
-            cout << "\nConstructor called";
+            LOG("Constructor called");
             name_.append(to_string(counter++));
             cout << "\nBirth : " << name_.c_str();
         }
         // construction from init list 
         CppRobot(const initializer_list<string>& vec_str) {
+            LOG("\nConstructor with Initializer list called");
             name_ = *(vec_str.begin());
             CppRobot(name_);            
         }
@@ -52,24 +54,26 @@ namespace ns_move_semantics {
 
         // construction from init list 
         CppRobot(const CppRobot& rhs) {
-            cout << "\nCopy Constructor called"; 
+            LOG("Copy Constructor called");
             name_ = rhs.name_;
             counter++;
         }
         // assignment operator
         CppRobot& operator = (const CppRobot& rhs) {
+            LOG("Assignment operator called");
             name_ = rhs.name_;
             return *this;
         }
 #if RValueImplDone
         // construction from init list 
         CppRobot(CppRobot&& rhs) {
-            cout << "\nMove Constructor called";
+            LOG("Move Constructor called");
             name_ = rhs.name_;
             rhs.name_ = "";
         }
         // assignment operator
         CppRobot& operator = (CppRobot&& rhs) {
+            LOG("Move Assignment called");
             name_ = rhs.name_;
             rhs.name_ = "";
             return *this;
@@ -88,11 +92,15 @@ namespace ns_move_semantics {
         return bot;
     }
 
-    void logRobot(CppRobot robo) {
+    void logRobot(CppRobot&& robo) {
         cout << "\nname : " << robo.name_ << "\tCount :" << robo.counter;
     }
 
-    void demoMoveSemantics()
+    void logRobot(const CppRobot& robo) {
+        cout << "\nname : " << robo.name_ << "\tCount :" << robo.counter;
+    }
+
+    void demoMoveSemantics_NoObjectCreatedWhileReturning()
     {
 
         CppRobot bot = getRobot("Robo");
@@ -116,10 +124,9 @@ namespace ns_move_semantics {
         return 0;
     }
 
-    void demo() {
+    void demoRValue() {
 
-        demoMoveSemantics();
-        //demoLRValuePreferences();
-
+        demoMoveSemantics_NoObjectCreatedWhileReturning();
+        demoLRValuePreferences();
     }
 }
