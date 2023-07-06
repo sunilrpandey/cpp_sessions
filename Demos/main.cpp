@@ -70,8 +70,11 @@ int main()
 	ns_move_semantics::demoRValue();
 	ns_misc::ns_constexpr::demoConstExpr();
 	*/
-	ns_templates::demo_templates();
-	ns_variadic_templates::demoRecursionWithVariadicTemplates();
+	//ns_templates::demo_templates();      
+	// ns_variadic_templates::demoRecursionWithVariadicTemplates(); 
+	ns_variadic_templates::demoVeriadicTemplateUsingFoldExpression();
+	//ns_variadic_templates::demoVeriadicTemplateClass();
+
 
 	
 	return 0;  
