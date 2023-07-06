@@ -22,7 +22,7 @@
 
 
 int main()
-{
+{ 
 		
 
 	/*
@@ -33,7 +33,7 @@ int main()
 	ArrayDemo ad;
 	ad.demo_arrays();
 
-	InheritanceDemo id;
+	InheritanceDemo id; 
 	id.demo_inheritance();
 
 	EmployeeClassDemo ecd;
@@ -48,7 +48,6 @@ int main()
 	fhd.demo_filehandling_with_class_objects();
 
 	
-	demo_templates();
 	
 	demoEnum(RED);
 	
@@ -59,19 +58,23 @@ int main()
 		
 	demoExceptionHandling();	 
 	
-	ns_sharedptrs::demo();
 	demoIntializerList();
 	demoAutoAndFewAlgo();	 	
 	demoLambdaFunc();	 
 	demoUserDefinedLiterals(); 
+	ns_smartptrs::demo();
 	ns_wkptr::demo(); 
 	ns_misc::demo();
 	ns_move_semantics::demoMoveSemantics() ;
 	ns_move_semantics::demoPerfectForwarding();
-	*/
 	ns_move_semantics::demoRValue();
+	ns_misc::ns_constexpr::demoConstExpr();
+	*/
+	ns_templates::demo_templates();
+	ns_variadic_templates::demoRecursionWithVariadicTemplates();
 
-	return 0; 
+	
+	return 0;  
 }    
   
-  
+   

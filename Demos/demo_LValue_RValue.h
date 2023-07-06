@@ -129,8 +129,7 @@ namespace ns_move_semantics {
 
     void demoRValue() {
 
-        //demoMoveSemantics_NoObjectCreatedWhileReturning();
-        //demoLRValuePreferences();
-        demoRValueIsJustaCast();
+        demoMoveSemantics_NoObjectCreatedWhileReturning();
+        demoLRValuePreferences();
     }
 }

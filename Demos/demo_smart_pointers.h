@@ -3,7 +3,7 @@
 #include <memory>
 using namespace std;
 
-namespace ns_sharedptrs
+namespace ns_smartptrs
 {
 
     // what to do and not to do with shared pointer
@@ -16,7 +16,6 @@ namespace ns_sharedptrs
     // }
 
     // dont create shared_ptr from stack but from heap only.
-
     int counter = 1;
     class Dog
     {
@@ -25,13 +24,64 @@ namespace ns_sharedptrs
 
         Dog(const string& str = "") :name_(str) {
             name_.append(to_string(counter++));
-            cout << "\nBirth : " << name_.c_str();
+            cout << "\nBirth : " << name_.c_str() << std::endl;
+        }
+        Dog(const initializer_list<string>& vec_str) {
+            name_ = *(vec_str.begin());
+            Dog(name_);
+            //name_.append(to_string(counter++));
+            //cout << "init_list Birth : " << name_.c_str() << endl; 
         }
         ~Dog() {
-            cout << "\nDeath : " << name_.c_str();
+            cout << "\nDeath : " << name_.c_str() << std::endl;
+        }
+        void bark() {
+            cout << "I am " << name_.c_str() << endl;
+        }
+    };
+    unique_ptr<Dog> getPtr(const std::string& dname, bool make_unique_flag = true)
+    {
+        if (make_unique_flag) {
+            return make_unique<Dog>(dname);
         }
 
-    };
+        unique_ptr<Dog> p(new Dog(dname));
+        //p->bark();
+        return p;
+    }
+    int demoUniquePtr()
+    {
+        // you can use new operator or make_unique to initialize
+        bool use_make_unique = false;
+        unique_ptr<Dog> p = getPtr("Smoky", use_make_unique);
+        cout << endl << "p : " << p->name_;
+
+        // assignments or copying transfers ownership
+        unique_ptr<Dog> p2 = move(p);
+        cout << endl << "p2  : " << p2->name_;
+        if (!p) {
+            cout << endl << "no more p" << endl;
+        }
+
+        unique_ptr<Dog> emptyPtr = nullptr;
+        emptyPtr = move(p2);
+        cout << "\nEmptyPtr got something : " << emptyPtr->name_;
+
+        //reset deletes the resource underneath
+        cout << endl << "See how NewDog replaces old one";
+        emptyPtr.reset(new Dog("NewDog"));
+
+
+        cout << "\n->->Demo : make unique <-<- ";
+        auto dgPtr = make_unique<Dog>("Madebymakeunique");
+        cout << "\n Name of this dog: " << dgPtr->name_ << endl;
+
+        auto releasedFromDgPtr = dgPtr.release();
+        cout << endl << "releasedFromDgPtr : " << releasedFromDgPtr->name_;
+
+        delete releasedFromDgPtr;
+        return 0;
+    }
     shared_ptr<Dog> getSharedPtr(const std::string& str, bool use_make_shared = true)
     {
         if (use_make_shared)
@@ -111,8 +161,27 @@ namespace ns_sharedptrs
 
     }
 
+    void demoUniquePointerToSharedPointer()
+    {
+        unique_ptr<Dog> up2 = make_unique<Dog>("Tommy");
+        up2->bark();
+        //up2.reset();
+        //pObj = up1.get();
+
+        shared_ptr<Dog> sp = std::move(up2);
+        // Unique() - Checks if* this is the only shared_ptr instance managing the current object, i.e.whether use_count() == 1.
+        cout << sp.unique() << "count : " << sp.use_count() << endl;
+        shared_ptr<Dog> sp2 = sp;
+        cout << sp.unique() << "count : " << sp.use_count() << endl;
+        cout << sp2.unique() << "count : " << sp2.use_count();
+
+
+    }
+
 
     void demo() {
+        demoUniquePtr();
+        demoUniquePointerToSharedPointer();
         demo_with_int_ptr();
         demo_basic_funcs();
         demo_custom_deleter();
