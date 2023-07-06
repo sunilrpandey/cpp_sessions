@@ -156,6 +156,7 @@ namespace ns_move_semantics
         return temp_string;
     }
 
+
     void demoMoveSemantics()
     {
         demoPassRvlauetoOtherClassByMoving();

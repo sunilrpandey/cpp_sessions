@@ -157,6 +157,7 @@
     <ClInclude Include="demo_LValue_RValue.h" />
     <ClInclude Include="demo_misc.h" />
     <ClInclude Include="demo_move_semantics.h" />
+    <ClInclude Include="demo_perfect_forwarding.h" />
     <ClInclude Include="demo_smart_pointers.h" />
     <ClInclude Include="demo_templates.h" />
     <ClInclude Include="demo_user_defined_literals.h" />

@@ -100,6 +100,9 @@ namespace ns_move_semantics {
         cout << "\nname : " << robo.name_ << "\tCount :" << robo.counter;
     }
 
+//Observation : one should alway overload fun(const T&) and fun(T&&), 
+// if you do fun(T) it will ambiguous error
+
     void demoMoveSemantics_NoObjectCreatedWhileReturning()
     {
 
@@ -126,7 +129,8 @@ namespace ns_move_semantics {
 
     void demoRValue() {
 
-        demoMoveSemantics_NoObjectCreatedWhileReturning();
-        demoLRValuePreferences();
+        //demoMoveSemantics_NoObjectCreatedWhileReturning();
+        //demoLRValuePreferences();
+        demoRValueIsJustaCast();
     }
 }

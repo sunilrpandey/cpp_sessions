@@ -18,6 +18,8 @@
 #include "demo_weak_ptr.h"
 #include "demo_LValue_RValue.h"
 #include "demo_move_semantics.h"
+#include "demo_perfect_forwarding.h"
+
 
 int main()
 {
@@ -64,10 +66,12 @@ int main()
 	demoUserDefinedLiterals(); 
 	ns_wkptr::demo(); 
 	ns_misc::demo();
+	ns_move_semantics::demoMoveSemantics() ;
+	ns_move_semantics::demoPerfectForwarding();
 	*/
 	ns_move_semantics::demoRValue();
-	ns_move_semantics::demoMoveSemantics() ;
 
 	return 0; 
 }    
+  
   
