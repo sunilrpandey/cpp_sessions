@@ -19,7 +19,7 @@
 #include "demo_LValue_RValue.h"
 #include "demo_move_semantics.h"
 #include "demo_perfect_forwarding.h"
-
+#include "demo_threads.h"
 
 int main()
 { 
@@ -69,12 +69,14 @@ int main()
 	ns_move_semantics::demoPerfectForwarding();
 	ns_move_semantics::demoRValue();
 	ns_misc::ns_constexpr::demoConstExpr();
-	*/
 	//ns_templates::demo_templates();      
 	// ns_variadic_templates::demoRecursionWithVariadicTemplates(); 
 	ns_variadic_templates::demoVeriadicTemplateUsingFoldExpression();
 	//ns_variadic_templates::demoVeriadicTemplateClass();
+	*/
 
+	ns_thread::demo(); 
+	 
 
 	
 	return 0;  
