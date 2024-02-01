@@ -19,7 +19,8 @@
 #include "demo_LValue_RValue.h"
 #include "demo_move_semantics.h"
 #include "demo_perfect_forwarding.h"
-#include "demo_threads.h"
+#include "demo_virtual_operatoroverload.h"
+//#include "demo_threads.h"
 
 int main()
 { 
@@ -75,8 +76,9 @@ int main()
 	//ns_variadic_templates::demoVeriadicTemplateClass();
 	*/
 
-	ns_thread::demo(); 
+	//ns_thread::demo(); 
 	 
+	demo_oo();
 
 	
 	return 0;  

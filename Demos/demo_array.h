@@ -9,7 +9,7 @@ public:
         int arr[5] = { 10,20,30,40,50 };
         int* pArray = new int[5];
         for (int i = 0; i < 5; i++)
-            pArray[i] = 100 * (i + 1);
+            pArray[i] = 100 * (i + 1); // fills array with 100,200,300 etc
 
         for (int i = 0; i < 5; i++) {
             cout << "Static Array elment arr[" << i << "] - " << arr[i];
@@ -27,7 +27,8 @@ public:
                                               {30,40}
         };
         int staticArray[NUM_ROWS][NUM_COL]; //2D Array with statically allocated memory
-        int** pDynArray = new int* [NUM_ROWS];//Dyanamically created 2D Array, its array of rows(an array itself)
+        
+        int** pDynArray = new int * [NUM_ROWS];//Dyanamically created 2D Array, it is array of rows(an array itself)
         int* pArrayAs2dArray = new int[NUM_ROWS * NUM_COL];//Dyanamically created Array, 2D array data is mapped here
 
         for (int i = 0; i < NUM_ROWS; i++) {

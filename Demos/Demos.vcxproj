@@ -163,7 +163,11 @@
     <ClInclude Include="demo_threads.h" />
     <ClInclude Include="demo_user_defined_literals.h" />
     <ClInclude Include="demo_week_ptr.h" />
+    <ClInclude Include="demo_virtual_operatoroverload.h" />
     <ClInclude Include="templates_basics.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="plans.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
