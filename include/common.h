@@ -11,7 +11,7 @@ using namespace std;
 #define LOG(x) if(ENABLE_LOGGING) { std::cout  << std::endl << x << std::endl;}
 
 
-enum Color 
+enum class Color 
 { 
 	RED, 
 	GREEN, 
