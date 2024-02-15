@@ -3,6 +3,10 @@
 
 using namespace std;
 
+// Demo includes
+// - Veriadic template 
+// - Operator new/delete overload
+
 int int_storage[100];
 
 
