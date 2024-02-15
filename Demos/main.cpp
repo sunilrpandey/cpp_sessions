@@ -25,11 +25,25 @@
 #include <vector>
 
 
+void demo_uniqueptr_get_exposes_ptr()
+{
+	auto upEmp = unique_ptr<Employee>();
+	Employee* emp = upEmp.get();
+	delete emp;
 
+	//Here underneath employee pointer is deleted therefor below line will crash
+	upEmp->getName();
+
+}
+
+
+#include <memory>
 
 
 int main()
-{ 
+{
+	
+	
 	// to make console wait for user input to close	
 	// return std::cin.get();
 	//ns_classsize::demo_sizeof_derived_class();

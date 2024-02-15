@@ -1,6 +1,9 @@
 #pragma once
 #include "two_d_array_mgr.h"
 
+// Need to take rows as class in order to operload/implement [][] operator
+// Arrays are always passed as ref
+
 class ArrayDemo
 {
 public:
@@ -39,7 +42,7 @@ public:
                 staticArray[i][j] = inputArray[i][j];
                 pDynArray[i][j] = inputArray[i][j] * 2;
                 pArrayAs2dArray[i * NUM_COL + j] = inputArray[i][j] * 3;
-            }
+            } 
         }
         cout << "\nDisplay Static Array : \n";
         for (int i = 0; i < NUM_ROWS; i++) {
