@@ -21,10 +21,18 @@
 #include "demo_perfect_forwarding.h"
 #include "demo_virtual_operatoroverload.h"
 //#include "demo_threads.h"
+#include "demo_classsize_in_diamond_case.h"
+#include <vector>
+
+
+
+
 
 int main()
 { 
-		
+	// to make console wait for user input to close	
+	// return std::cin.get();
+	//ns_classsize::demo_sizeof_derived_class();
 
 	/*
 	KStringDemo ksd;
@@ -78,7 +86,7 @@ int main()
 
 	//ns_thread::demo(); 
 	 
-	demo_oo();
+	//demo_oo();
 
 	
 	return 0;  

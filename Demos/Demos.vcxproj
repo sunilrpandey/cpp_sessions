@@ -106,6 +106,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -120,6 +121,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -141,10 +143,13 @@
     <ClInclude Include="..\include\employee.h" />
     <ClInclude Include="..\include\friends.h" />
     <ClInclude Include="..\include\KString.h" />
-    <ClInclude Include="..\include\smart_pointer.h" />
+    <ClInclude Include="..\include\custom_smart_pointer.h" />
     <ClInclude Include="..\include\two_d_array_mgr.h" />
     <ClInclude Include="demo_array.h" />
     <ClInclude Include="demo_auto_few_algo.h" />
+    <ClInclude Include="demo_bind.h" />
+    <ClInclude Include="demo_classsize_in_diamond_case.h" />
+    <ClInclude Include="demo_consyt_expr.h" />
     <ClInclude Include="demo_custom_smart_pointer.h" />
     <ClInclude Include="demo_employee.h" />
     <ClInclude Include="demo_enums.h" />
@@ -164,6 +169,7 @@
     <ClInclude Include="demo_user_defined_literals.h" />
     <ClInclude Include="demo_week_ptr.h" />
     <ClInclude Include="demo_virtual_operatoroverload.h" />
+    <ClInclude Include="ptrs_basics.h" />
     <ClInclude Include="templates_basics.h" />
   </ItemGroup>
   <ItemGroup>

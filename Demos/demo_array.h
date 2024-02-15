@@ -94,6 +94,21 @@ public:
         // demoReference(twoDArray); as we discussed before
     }
 
+    void changeArrElem(int a[3]) {
+        a[0] = 10;
+        a[1] = 20;
+        a[2] = 30;
+    }
+
+    void demoVerifyArrayPassedbyRef() {
+        int arr[3] = { 1,2,3 };
+        changeArrElem(arr); //array is always passed as reference
+        cout << "changed array elems : " << arr[0] << arr[1] << arr[2];
+        return;
+
+    }
+
+
     void demo_arrays()
     {
 
@@ -101,6 +116,8 @@ public:
         //demoMultiDimentionalArray();
 
         //demo2DArrayManagerClass();
+
+        demoVerifyArrayPassedbyRef();
 
     }
 };
