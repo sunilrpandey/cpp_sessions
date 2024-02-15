@@ -58,9 +58,9 @@ void print(T obj, Args... more) {
 	print(more...);
 }
 
-void Demo_VariadicTemplate()
-{
 
+void demo_operator_new_delete()
+{
 	{
 		for (int i = 0; i < 100; i++) {
 			int_storage[i] = i;
@@ -72,9 +72,15 @@ void Demo_VariadicTemplate()
 
 		delete t;
 
-		
+
 	}
 	return;
+
+}
+
+void Demo_VariadicTemplate()
+{
+
 	cout << "::: Print :::" << endl;
 	print(5);
 

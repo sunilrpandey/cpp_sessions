@@ -1,17 +1,10 @@
 #include "01_variadic_template.h"
+#include "02_rvalue_refs.h"
 
-/*
-int& getNum() {
-	return 10;
-}
-const int& or int&& work
-*/
-int&& getNum() {
-	return 10;
-}
+
 int main()
 {
-	int i = getNum();
-	Demo_VariadicTemplate();
+	demo_rvalue_refs();
+	//Demo_VariadicTemplate();
 	return 0;
 }
