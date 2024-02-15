@@ -1,5 +1,6 @@
 #pragma once
 #include "friends.h"
+//#define ENABLE_LOGGING 1
 
 class DemoFriends
 {
@@ -10,11 +11,15 @@ public:
 
 		Book book("C++", 300);
 
-		//Friend function
+		LOG("Demo : Friend function");
 		print(book);
 
-		//Friend class
+		LOG("Demo : Friend class");
 		Printer printer;
 		printer.print(book);
+
+		LOG("Demo : pageCount member function is friend");
+		Scanner scanner;
+		scanner.pageCount(book);
 	}
 };
