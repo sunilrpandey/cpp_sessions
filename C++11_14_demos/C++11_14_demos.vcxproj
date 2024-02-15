@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClInclude Include="01_variadic_template.h" />
     <ClInclude Include="02_rvalue_refs.h" />
+    <ClInclude Include="03_std_unique_ptrs.h" />
     <ClInclude Include="includes.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
