@@ -5,7 +5,7 @@
 /* In case of virtual bases
 Check size of derived to observe how top base data is copied to bottom derived if not virtually derived.Check if Derived has two copy of top base!
 sizeof Base : 40
-sizeof Dervied : 56
+sizeof Bottom Dervied : 56
 Anyways !
 sizeof MidDer1 : 48
 sizeof MidDer2 : 48
