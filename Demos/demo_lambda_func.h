@@ -92,7 +92,11 @@ void demo_init_lambda_param()
 	cout << "init_lambda_param" << endl;
 
 	int a = 8, b = 2;
-	[&, &b = a]() {a += b; }();
+	auto lam_func = [&, &b = a]() { // Here b is not being passed by reference but acting as refrence to a, not passing by reference as it appears
+		a += b; 
+		cout << "b as ref of a : " << b << endl;
+	};
+	lam_func();
 	cout << a << "   " << b << endl;
 
 }
