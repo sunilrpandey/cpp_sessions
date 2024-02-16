@@ -20,10 +20,12 @@
 #include "demo_move_semantics.h"
 #include "demo_perfect_forwarding.h"
 #include "demo_virtual_operatoroverload.h"
+#include "demo_bind.h"
 //#include "demo_threads.h"
 #include "demo_classsize_in_diamond_case.h"
 #include <vector>
-
+#include <memory>
+#include "demo_static_member.h"
 
 void demo_uniqueptr_get_exposes_ptr()
 {
@@ -37,11 +39,18 @@ void demo_uniqueptr_get_exposes_ptr()
 }
 
 
-#include <memory>
-
 
 int main()
 {
+	float f{ 4 }; // works 
+	// int i{3.4}; // does not compile
+	
+
+	ns_static::demo_static();
+	
+	//ns_smartptrs::demo();
+	//ns_wkptr::demo();
+	//ns_misc::demo();
 	
 	
 	// to make console wait for user input to close	
@@ -51,7 +60,7 @@ int main()
 	/*
 	KStringDemo ksd;
 	ksd.demoKSTrings();
-
+	+
 	
 	ArrayDemo ad;
 	ad.demo_arrays();
@@ -84,6 +93,7 @@ int main()
 	demoIntializerList();
 	demoAutoAndFewAlgo();	 	
 	demoLambdaFunc();	 
+	demoBind();
 	demoUserDefinedLiterals(); 
 	ns_smartptrs::demo();
 	ns_wkptr::demo(); 
@@ -102,7 +112,6 @@ int main()
 	 
 	//demo_oo();
 
-	
 	return 0;  
 }    
   

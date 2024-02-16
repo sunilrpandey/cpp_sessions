@@ -104,3 +104,4 @@ SharedPointer<T> make_shared_pointer(Args&&... args) {
 	return SharedPointer<T>(new T(std::forward<Args>(args)...));
 }
 
+
