@@ -1,6 +1,6 @@
-#pragma once
+#include "common.h"
 #include "templates_basics.h"
-#include <tuple>
+#include "template_meta_prog.h"
 
 namespace ns_templates {
 
@@ -23,7 +23,6 @@ namespace ns_templates {
 
 		//cout << "\nFactorial : " << print<5>();
 	}
-
 	void demoTemplatesClass()
 	{
 
@@ -60,60 +59,15 @@ namespace ns_templates {
 	}
 	void demo_templates()
 	{
+		cout << "\nDemo : Template MetaProgramming" << endl;
+		ns_templates::demo_factorial_using_meta_programming();
+
+		cout << "Demo : Template Functions" << endl;
 		demoTemplateFunction();
+
+		cout << "Demo : Template Class" << endl;
 		demoTemplatesClass();
 
 	}
-}
-
-namespace ns_variadic_templates
-{
-	template <typename T>
-	T sum(T value) {
-		return value;
-	}
-
-	template <typename T, typename... Args>
-	T sum(T first, Args... rest) {
-		return first + sum(rest...);
-	}
-
-	int demoRecursionWithVariadicTemplates() {
-		int total = sum(1, 2, 3.5, 4, 5);
-		return 0;
-	}
-
-	template <typename... Args>
-	void printValues(Args... args) {
-		((std::cout << args << " "), ...);
-	}
-
-	int demoVeriadicTemplateUsingFoldExpression() {
-		printValues(1, 2, 3, "hello", 3.14);
-		return 0;
-	}
-
-	/*
-	template <typename... Args>
-	class Tuple {
-	public:
-		Tuple(Args... args) : values(args...) {}
-
-		void print() {
-			(void(std::cout << ... << values) << endl);
-		}
-
-	private:
-		std::tuple<Args...> values;
-	};
-
-	int demoVeriadicTemplateClass() {
-		Tuple<int, std::string, double> tuple(1, "hello", 3.14);
-		tuple.print();
-		return 0;
-	}
-
-	*/
-
-
 };
+

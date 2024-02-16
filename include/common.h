@@ -2,6 +2,9 @@
 #include <iostream>
 #include <algorithm>
 #include <functional>
+#include <vector>
+#include <tuple>
+#include <memory>
 using namespace std;
 
 #define NUM_ROWS 2

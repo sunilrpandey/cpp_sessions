@@ -144,6 +144,7 @@
     <ClInclude Include="..\include\friends.h" />
     <ClInclude Include="..\include\KString.h" />
     <ClInclude Include="..\include\custom_smart_pointer.h" />
+    <ClInclude Include="..\include\templates_basics.h" />
     <ClInclude Include="..\include\two_d_array_mgr.h" />
     <ClInclude Include="demo_array.h" />
     <ClInclude Include="demo_auto_few_algo.h" />
@@ -164,13 +165,14 @@
     <ClInclude Include="demo_move_semantics.h" />
     <ClInclude Include="demo_perfect_forwarding.h" />
     <ClInclude Include="demo_smart_pointers.h" />
+    <ClInclude Include="demo_static_member.h" />
     <ClInclude Include="demo_templates.h" />
-    <ClInclude Include="demo_threads.h" />
     <ClInclude Include="demo_user_defined_literals.h" />
     <ClInclude Include="demo_week_ptr.h" />
     <ClInclude Include="demo_virtual_operatoroverload.h" />
     <ClInclude Include="ptrs_basics.h" />
-    <ClInclude Include="templates_basics.h" />
+    <ClInclude Include="template_meta_prog.h" />
+    <ClInclude Include="variadic_templates.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="plans.txt" />

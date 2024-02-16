@@ -167,7 +167,7 @@ public:
 	Student(const std::string& n, const std::string& s) :Person(n), subject(s) {
 		cout << "\nStudent created" << endl;
 	}
-	virtual ~Student() { cout << "\Student destroyed" << endl; }
+	virtual ~Student() { cout << "\nStudent destroyed" << endl; }
 	std::string subject;
 };
 class Faculty : virtual public Person
@@ -176,7 +176,7 @@ public:
 	Faculty(const std::string& n, const std::string& d) : Person(n), department(d) {
 		cout << "\nFaculty created" << endl;
 	}
-	virtual ~Faculty() { cout << "\Faculty destroyed" << endl; }
+	virtual ~Faculty() { cout << "\nFaculty destroyed" << endl; }
 	std::string department;
 };
 class TA : public Student , public Faculty
@@ -185,7 +185,7 @@ public:
 	TA(const std::string& n, const std::string& s, const std::string& d) :Student(n, s), Faculty(n, d),Person(n) {
 		cout << "\nTA created" << endl;
 	}
-	virtual ~TA() { cout << "\TA destroyed" << endl; }
+	virtual ~TA() { cout << "\nTA destroyed" << endl; }
 	std::string department;
 };
 

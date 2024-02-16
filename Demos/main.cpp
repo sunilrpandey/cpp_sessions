@@ -6,7 +6,6 @@
 #include "demo_kstring.h"
 #include "demo_misc.h"
 #include "demo_friends.h"
-#include "demo_templates.h"
 #include "demo_custom_smart_pointer.h"
 #include "demo_enums.h"
 #include "demo_smart_pointers.h"
@@ -23,9 +22,9 @@
 #include "demo_bind.h"
 //#include "demo_threads.h"
 #include "demo_classsize_in_diamond_case.h"
-#include <vector>
-#include <memory>
 #include "demo_static_member.h"
+#include "demo_templates.h"
+
 
 void demo_uniqueptr_get_exposes_ptr()
 {
@@ -46,7 +45,8 @@ int main()
 	// int i{3.4}; // does not compile
 	
 
-	ns_static::demo_static();
+	//ns_static::demo_static();
+	ns_templates::demo_templates();
 	
 	//ns_smartptrs::demo();
 	//ns_wkptr::demo();

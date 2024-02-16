@@ -129,14 +129,7 @@ private:
 	int size_;
 };
 
-//template<int N>
-//int print()
-//{
-//	if (N == 1)
-//		return N;
-//	else
-//		return N * print<N - 1>();	
-//}
+
 
 
 
