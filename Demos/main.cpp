@@ -98,15 +98,16 @@ namespace diamondprob {
 
 int main()
 {
-	diamondprob::demo();
-	return 0;
-
-	float f{ 4 }; // works 
+	
+	//float f{ 4 }; // works 
 	// int i{3.4}; // does not compile
 	
+	ArrayDemo ad;
+	ad.demoAutoRangeBasedAccess();
+	ad.demo_arrays();
 
 	//ns_static::demo_static();
-	ns_templates::demo_templates();
+	//ns_templates::demo_templates();
 	
 	//ns_smartptrs::demo();
 	//ns_wkptr::demo();
@@ -120,11 +121,8 @@ int main()
 	/*
 	KStringDemo ksd;
 	ksd.demoKSTrings();
-	+
 	
-	ArrayDemo ad;
-	ad.demo_arrays();
-
+	
 	InheritanceDemo id; 
 	id.demo_inheritance();
 
