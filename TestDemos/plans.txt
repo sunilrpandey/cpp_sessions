@@ -1,0 +1,45 @@
+Start with OOPs concept
+
+Abstraction :
+
+using 
+- Class // Topic of discussion
+- Function
+- Header
+
+
+class
+	- data
+		- data types
+			basic types -> int, float, char 
+			compound type/user defined type
+				same type : Array, enum
+				distinct types : struct, union, class
+				generic type : templates
+
+		- type qualifier
+			const 
+			mutable
+			static 
+			volatile
+
+		- data manipulators
+
+	- member function
+		take inputs, do some calculation and return result
+
+
+Access control mechanism
+	private
+	public
+	protected
+
+Encapsulation -> binding function to member variables by puttin it both in a single unit
+
+
+
+
+
+
+
+
