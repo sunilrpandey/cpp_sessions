@@ -72,6 +72,12 @@ public:
     ~TwoDArrayManager() {
         deallocateMemory();
     }
+
+    //need to check if it works , though not safe if caller does not know size of rows and try to access
+    int* operator[](int row_index) {
+        return pDynArray[row_index];
+    }
+    
 #if 0 // needed to overload [][]
 private:
     class Row

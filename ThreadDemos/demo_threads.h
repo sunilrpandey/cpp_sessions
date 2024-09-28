@@ -20,10 +20,12 @@ namespace ns_thread
 		std::thread t1(stdFunc);
 		std::thread t2(threadFunc,"\nHello from Func");
 		std::thread t3((FuncObj()));
+		std::thread t4(lmdaFunc);
 
 		t1.join();
 		t2.join();
 		t3.join();
+		t4.join();
 		//t1.detach();
 		cout << "\nHello from Main thread!!!";
 	}
