@@ -26,6 +26,7 @@ int demoIntializerList()
             cout << "stInt::i = " << i << endl;
         }
         //stInt(){}
+        //stInt(const std::initializer_list<int>& vec) { i = *vec.begin(); }
     };
     stInt sti{ 30 };
     sti.show();

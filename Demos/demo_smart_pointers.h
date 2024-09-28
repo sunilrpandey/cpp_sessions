@@ -156,7 +156,10 @@ namespace ns_smartptrs
         //custom deleter for array object other wise it iwll not call [] delete
         {
             cout << "\nDeleting shared ptr for object array : ";
-            shared_ptr<Dog> sp_arr(new Dog[3], [](Dog* p) { cout << "\nCustom Deleting..."; delete[] p; });
+            shared_ptr<Dog[]> sp_arr(new Dog[3], [](Dog* p) { cout << "\nCustom Deleting..."; delete[] p; });
+            sp_arr[0].bark();
+            sp_arr[1].bark();
+            sp_arr[2].bark();
         }
 
     }
@@ -178,6 +181,20 @@ namespace ns_smartptrs
 
     }
 
+    void demo_arrayUniquePtr()
+    {
+        cout << endl << "Demo : Array of unique Ptrs and mgmt";
+        //custom deleter for array object other wise it iwll not call [] delete
+        {
+            cout << "\nCreation/Deletion of unique ptrs for object array : ";
+            unique_ptr<Dog[]> sp_arr(new Dog[3]);
+            sp_arr[0].bark();
+            sp_arr[1].bark();
+            sp_arr[2].bark();
+        }
+
+    }
+
 
     void demo() {
         demoUniquePtr();
@@ -185,6 +202,8 @@ namespace ns_smartptrs
         demo_with_int_ptr();
         demo_basic_funcs();
         demo_custom_deleter();
+
+        demo_arrayUniquePtr();
     }
 
 }

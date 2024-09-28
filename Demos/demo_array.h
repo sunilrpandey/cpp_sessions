@@ -1,15 +1,32 @@
 #pragma once
 #include "two_d_array_mgr.h"
 
+// Need to take rows as class in order to operload/implement [][] operator
+// Arrays are always passed as ref
+// 2D auto and range based loop does not work with array since it needs begin()
+
 class ArrayDemo
 {
 public:
+    void demoAutoRangeBasedAccess()
+    {
+        std::cout << "Showing Array values using auto and range based loop";
+        int arr[5] = { 10,20,30,40,50 };
+
+        for(auto& i: arr) {
+            std::cout << i;
+        }
+    }
+    
     void demoArray()
     {
         int arr[5] = { 10,20,30,40,50 };
+        for(auto& i: arr) {
+            std::cout << i;
+        }
         int* pArray = new int[5];
         for (int i = 0; i < 5; i++)
-            pArray[i] = 100 * (i + 1);
+            pArray[i] = 100 * (i + 1); // fills array with 100,200,300 etc
 
         for (int i = 0; i < 5; i++) {
             cout << "Static Array elment arr[" << i << "] - " << arr[i];
@@ -27,7 +44,8 @@ public:
                                               {30,40}
         };
         int staticArray[NUM_ROWS][NUM_COL]; //2D Array with statically allocated memory
-        int** pDynArray = new int* [NUM_ROWS];//Dyanamically created 2D Array, its array of rows(an array itself)
+        
+        int** pDynArray = new int * [NUM_ROWS];//Dyanamically created 2D Array, it is array of rows(an array itself)
         int* pArrayAs2dArray = new int[NUM_ROWS * NUM_COL];//Dyanamically created Array, 2D array data is mapped here
 
         for (int i = 0; i < NUM_ROWS; i++) {
@@ -38,7 +56,7 @@ public:
                 staticArray[i][j] = inputArray[i][j];
                 pDynArray[i][j] = inputArray[i][j] * 2;
                 pArrayAs2dArray[i * NUM_COL + j] = inputArray[i][j] * 3;
-            }
+            } 
         }
         cout << "\nDisplay Static Array : \n";
         for (int i = 0; i < NUM_ROWS; i++) {
@@ -62,6 +80,8 @@ public:
             }
             cout << endl;
         }
+
+        
         //delete dynamically created 2d dynamic array
         for (int i = 0; i < NUM_ROWS; i++) {
             delete[] pDynArray[i];
@@ -93,6 +113,21 @@ public:
         // demoReference(twoDArray); as we discussed before
     }
 
+    void changeArrElem(int a[3]) {
+        a[0] = 10;
+        a[1] = 20;
+        a[2] = 30;
+    }
+
+    void demoVerifyArrayPassedbyRef() {
+        int arr[3] = { 1,2,3 };
+        changeArrElem(arr); //array is always passed as reference
+        cout << "changed array elems : " << arr[0] << arr[1] << arr[2];
+        return;
+
+    }
+
+
     void demo_arrays()
     {
 
@@ -100,6 +135,8 @@ public:
         //demoMultiDimentionalArray();
 
         //demo2DArrayManagerClass();
+
+        demoVerifyArrayPassedbyRef();
 
     }
 };

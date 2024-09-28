@@ -36,7 +36,7 @@ public:
 private:
     std::string name_;
     
-public:
+public: 
     int id_;
     int age_;
     double salary_;

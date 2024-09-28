@@ -110,8 +110,8 @@ namespace ns_move_semantics {
         cout << "\nname : " << bot.name_ << "\tCount :" << bot.counter;
 
         cout << "\nlogRobot demo" << endl;
-        //logRobot(bot);
-        logRobot(CppRobot("RoboUpgraded"));
+        logRobot(bot); // will call copy constructor 
+        logRobot(CppRobot("RoboUpgraded"));// will call move constructor
 
         return;
     }

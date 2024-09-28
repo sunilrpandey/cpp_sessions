@@ -42,11 +42,10 @@ public:
         delete[] pStrArray;
     }
 
-    void demoKSTrings()
+    void demoKStrings()
     {
         //demoStringClass();
         //demoNewDeleteOperatorOverload();
-
 
     }
 };

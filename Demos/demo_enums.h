@@ -4,13 +4,13 @@
 void demoEnum(Color selectedColor)
 {
 	switch (selectedColor) {
-	case RED:
+	case Color::RED:
 		cout << "The selected color is red." << endl;
 		break;
-	case GREEN:
+	case Color::GREEN:
 		cout << "The selected color is green." << endl;
 		break;
-	case BLUE:
+	case Color::BLUE:
 		cout << "The selected color is blue." << endl;
 		break;
 	default:

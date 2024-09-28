@@ -15,13 +15,11 @@ public:
 
 
 	//methogds
-	virtual void method() 
-	{
-		cout << "\nBase Method !" << endl;
+	virtual void vir_method() {
+		cout << "\nBase Virtual Method !" << endl;
 	}
 
-	void adhoc_method()
-	{
+	void adhoc_method()	{
 		cout << "\nBase Adhoc Method !" << endl;
 	}
 
@@ -37,16 +35,14 @@ public:
 	~Derived() {
 		cout << "\nDerived destroyed!" << endl;
 	}
-	void adhoc_method()
-	{
+	void adhoc_method()	{
 		cout << "\nDerived Adhoc Method !" << endl;
 	}
 
 
 	//methogds
-	void method()
-	{
-		cout << "\nDerived Method !" << endl;
+	void vir_method()	{
+		cout << "\nDerived Virtual Method !" << endl;
 	}
 };
 
@@ -63,7 +59,7 @@ public:
 
 
 	//methogds
-	void method()
+	void vir_method()
 	{
 		cout << "\nMultiLevelDerived Method !" << endl;
 	}
@@ -101,7 +97,7 @@ public:
 
 
 	//methogds
-	void method()
+	void vir_method()
 	{
 		cout << "\nMultiInheritedDerived Method !" << endl;
 	}
@@ -171,7 +167,7 @@ public:
 	Student(const std::string& n, const std::string& s) :Person(n), subject(s) {
 		cout << "\nStudent created" << endl;
 	}
-	virtual ~Student() { cout << "\Student destroyed" << endl; }
+	virtual ~Student() { cout << "\nStudent destroyed" << endl; }
 	std::string subject;
 };
 class Faculty : virtual public Person
@@ -180,7 +176,7 @@ public:
 	Faculty(const std::string& n, const std::string& d) : Person(n), department(d) {
 		cout << "\nFaculty created" << endl;
 	}
-	virtual ~Faculty() { cout << "\Faculty destroyed" << endl; }
+	virtual ~Faculty() { cout << "\nFaculty destroyed" << endl; }
 	std::string department;
 };
 class TA : public Student , public Faculty
@@ -189,7 +185,7 @@ public:
 	TA(const std::string& n, const std::string& s, const std::string& d) :Student(n, s), Faculty(n, d),Person(n) {
 		cout << "\nTA created" << endl;
 	}
-	virtual ~TA() { cout << "\TA destroyed" << endl; }
+	virtual ~TA() { cout << "\nTA destroyed" << endl; }
 	std::string department;
 };
 
@@ -200,32 +196,33 @@ public:
 	{
 		cout << "\nBase Demo : " << endl;
 		Base base;
-		base.method();
+		base.vir_method();
 
 		cout << "\nDerived Demo : " << endl;
 		Derived derived;
-		derived.method();
+		derived.vir_method();
 
 		cout << "\nMultilevel inheritance Demo : " << endl;
 		MultiLevelDerived mult_level_derived;
-		mult_level_derived.method();
+		mult_level_derived.vir_method();
 
 		cout << "\nMultiple inheritanceDemo : " << endl;
 		MultiInheritedDerived mult_inherited_derived;
-		mult_inherited_derived.method();
+		mult_inherited_derived.vir_method();
 
 	}
 	void virtualFuncDemo()
 	{
 		Base* pB = new Base;
-		pB->method();
+		pB->vir_method();
 
 		Derived* pD = new Derived;
-		pD->method();
+		pD->vir_method();
 
 		delete pB;
+
 		pB = pD;
-		pB->method();
+		pB->vir_method();
 		pB->adhoc_method();
 		delete pB;
 	}
@@ -238,12 +235,8 @@ public:
 		ta.showName(); //Error if not student and Faculty are not virtually derived, Init Base from bottom class constructor only
 	}
 
-
-	int demo_inheritance()
+	void access_specifier_demo()
 	{
-		//inheritanceBasicDemo();
-		//virtualFuncDemo();
-
 		//Der1 d1;
 		//d1.a
 		//d1.b; //can
@@ -251,12 +244,17 @@ public:
 		//Der2 d2;
 		//d2.b
 
-		demoDiamondProb();
+	}
+	int demo_inheritance()
+	{
+		//inheritanceTypes_and_BasicsDemo();
+		//virtualFuncDemo();
+		//access_specifier_demo();
+		
+		//demoDiamondProb();
 
-		//Student st("abc", "math");
-		//cout << st.name << endl;
-
-
+		Student st("abc", "math");
+		cout << st.name << endl;
 
 		return 0;
 	}
