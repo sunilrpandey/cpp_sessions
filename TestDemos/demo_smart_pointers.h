@@ -171,12 +171,12 @@ namespace ns_smartptrs
         //up2.reset();
         //pObj = up1.get();
 
-        shared_ptr<Dog> sp = std::move(up2);
+        //shared_ptr<Dog> sp = std::move(up2);
         // Unique() - Checks if* this is the only shared_ptr instance managing the current object, i.e.whether use_count() == 1.
-        cout << sp.unique() << "count : " << sp.use_count() << endl;
-        shared_ptr<Dog> sp2 = sp;
-        cout << sp.unique() << "count : " << sp.use_count() << endl;
-        cout << sp2.unique() << "count : " << sp2.use_count();
+        //cout << sp.unique() << "count : " << sp.use_count() << endl;
+        //shared_ptr<Dog> sp2 = sp;
+        //cout << sp.unique() << "count : " << sp.use_count() << endl;
+        //cout << sp2.unique() << "count : " << sp2.use_count();
 
 
     }

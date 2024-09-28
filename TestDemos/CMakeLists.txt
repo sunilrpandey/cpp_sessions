@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 file(GLOB ALL_HEADER_FILES 
     "*.h*")
-
+    in
 #include_directories("../Include")
 
 
