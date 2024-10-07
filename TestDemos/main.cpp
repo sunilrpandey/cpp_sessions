@@ -22,6 +22,7 @@
 #include "demo_bind.h"
 //#include "demo_threads.h"
 #include "demo_classsize_in_diamond_case.h"
+#include "demo_diamond_prob.h"
 #include "demo_static_member.h"
 #include "demo_templates.h"
 
@@ -37,67 +38,15 @@ void demo_uniqueptr_get_exposes_ptr()
 
 }
 
-namespace diamondprob {
-	class Base
-	{
-	public:
-		int mem;
-		int arr[10];
-		Base(int ii = 10) : mem(ii) {
-
-			std::cout << "Base Class: " << mem << std::endl;
-		}
-		virtual void fun() {
-			std::cout << "mem value : " << mem << std::endl;
-		}
-
-	};
-	class MidDer1 : public virtual Base {
-	public:
-
-		MidDer1(int mi = 20) :Base(mi) {
-			cout << "MidDer1 Class : " << mem << std::endl;
-
-		}
-		virtual void fun() {
-			std::cout << "MidDer1 : " << mem;
-		}
-
-	};
-	class MidDer2 : public virtual Base {
-	public:
-		MidDer2(int mi = 21) :Base(mi) {
-			cout << "MidDer2 Class : " << mem << std::endl;
-
-		}
-		virtual void fun() {
-			std::cout << "MidDer2 : " << mem;
-		}
-	};
-	class Derived :public MidDer1, public MidDer2 {
-	public:
-		Derived(int mi = 31) :MidDer1(mi), MidDer2(mi), Base(mi) {
-
-		}
-		virtual void fun() {
-			std::cout << "Derived : " << mem;
-		}
-
-	};
-
-	void demo() {
-		MidDer1 md;
-		md.fun();
-		Derived dd;
-		dd.fun();
-
-	}
-};
-
-
 
 int main()
 {
+	ns_move_semantics::demo_moveConstructible_moveAssignable();
+	return 0;
+
+
+	diamondprob::demo();
+	return 0;
 	
 	//float f{ 4 }; // works 
 	// int i{3.4}; // does not compile

@@ -157,10 +157,37 @@ namespace ns_move_semantics
     }
 
 
+    class MyClass {
+
+        MyClass() {};
+        ~MyClass() {};
+
+        MyClass& operator = (const MyClass& rhs) {
+            return *this;
+        }
+
+    };
+
+    int demo_moveConstructible_moveAssignable() {
+        //for empty class its moveconstructible and move assignable but it becomes non move construtible if you create any constuction and miss implementing move constructor
+        // and same if assignment operator
+        std::cout << std::boolalpha;
+        std::cout << "Is MoveConstructible: " << std::is_move_constructible<MyClass>::value << '\n';
+        std::cout << "Is MoveAssignable: " << std::is_move_assignable<MyClass>::value << '\n';
+
+        return 0;
+    }
+
+
     void demoMoveSemantics()
     {
         demoPassRvlauetoOtherClassByMoving();
         demo_move_assignment();
+
+        demo_moveConstructible_moveAssignable();
     }
+
+
+    
 }
 
