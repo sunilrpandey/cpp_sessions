@@ -15,7 +15,9 @@ int demoBind()
     assert(answer == -101);
     cout << answer;
 
+    // here -1 means place first param, -2 means place second param
     std::function<int(int, int)> funPow2 = std::bind(ly_add, placeholders::_1, placeholders::_2, 100);
+    // in below example for ly_add i = 200, j = 30
     answer = funPow2(200, 30);
     assert(answer == 70);
 
@@ -25,10 +27,12 @@ int demoBind()
 
 
     auto funPow3 = std::bind(ly_add, 20, placeholders::_2, 5); //20 and 5 are hardcoded as first/third arg
-    answer = funPow3(10, 1); //placeholders::_2 means 1 woudl be passed as second arg, placeholders::_1 means 10 would be passed as seond arg of funPow2 fun in above line
-    
+    answer = funPow3(10, 3); //placeholders::_2 means 3 woudl be passed as second arg, 10 as first param would be ignored. 
+    assert(answer == 12);
+
     auto funPow4 = std::bind(ly_add, placeholders::_2, placeholders::_1, 5); 
     answer = funPow4(10, 1); //  Here 1 would be passed as first and 10 would be passed as second arg 
+    assert(answer == -14);
 
 
     return 0;

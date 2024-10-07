@@ -39,8 +39,75 @@ void demo_uniqueptr_get_exposes_ptr()
 }
 
 
+class TwoDArray {
+private:
+	std::vector<std::vector<int>> array;
+	int rows;
+	int cols;
+
+public:
+	// Constructor: Initializes the 2D array with given rows and columns.
+	TwoDArray(int r, int c) : rows(r), cols(c) {
+		array.resize(r, std::vector<int>(c, 0));  // Initialize all elements to 0
+	}
+
+	// Overload operator[] to return a reference to a row.
+	std::vector<int>& operator[](int i) 
+	{
+		if (i < 0 || i >= rows) {
+			throw std::out_of_range("Row index out of range");
+		}
+		return array[i];
+	}
+
+	// Overload operator[] for const objects (for read-only access)
+	const std::vector<int>& operator[](int i) const {
+		if (i < 0 || i >= rows) {
+			throw std::out_of_range("Row index out of range");
+		}
+		return array[i];
+	}
+
+	// Print the array for debugging purposes
+	void print() const {
+		for (int i = 0; i < rows; ++i) {
+			for (int j = 0; j < cols; ++j) {
+				std::cout << array[i][j] << " ";
+			}
+			std::cout << std::endl;
+		}
+	}
+};
+
+int demo2DArrayUsingIndexs() {
+	TwoDArray arr(3, 4); // Create a 3x4 two-dimensional array
+
+	// Access and modify elements using the overloaded [] operator
+	arr[0][0] = 1;
+	arr[0][1] = 2;
+	arr[1][0] = 3;
+	arr[2][2] = 4;
+
+	// Print the 2D array
+	arr.print();
+
+	// Example of out-of-bounds access
+	try {
+		arr[4][1] = 10;  // Invalid row access, throws exception
+	}
+	catch (const std::out_of_range& e) {
+		std::cout << e.what() << std::endl;
+	}
+
+	return 0;
+}
+
+
+
 int main()
 {
+	ns_classsize::demo_sizeof_derived_class();
+	demoBind();
 	ns_move_semantics::demo_moveConstructible_moveAssignable();
 	return 0;
 
@@ -65,8 +132,7 @@ int main()
 	
 	// to make console wait for user input to close	
 	// return std::cin.get();
-	//ns_classsize::demo_sizeof_derived_class();
-
+	
 	/*
 	KStringDemo ksd;
 	ksd.demoKSTrings();
