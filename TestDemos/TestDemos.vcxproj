@@ -34,6 +34,8 @@
     <ClInclude Include="..\include\friends.h" />
     <ClInclude Include="..\include\KString.h" />
     <ClInclude Include="..\include\templates_basics.h" />
+    <ClInclude Include="..\include\template_array.h" />
+    <ClInclude Include="..\include\template_sized_array.h" />
     <ClInclude Include="..\include\two_d_array_mgr.h" />
     <ClInclude Include="demo_array.h" />
     <ClInclude Include="demo_auto_few_algo.h" />
@@ -156,7 +158,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp14</LanguageStandard>
       <AdditionalIncludeDirectories>$(SolutionDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>

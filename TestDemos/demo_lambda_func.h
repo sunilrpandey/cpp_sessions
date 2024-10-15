@@ -100,9 +100,18 @@ void demo_init_lambda_param()
 	cout << a << "   " << b << endl;
 
 }
+void demoSimpleLambda() {
+	auto a{ 5 }, b{ 7 };
+	auto f = [=]() mutable {
+		a++;
+		std::cout << a << b << endl;
+	};
+	f();
+}
 int demoLambdaFunc()
 {
 	demoDisplayContentUsingLambda();
+	demoSimpleLambda();
 	mutableLambdaDemo();
 	demo_init_lambda_param();
 

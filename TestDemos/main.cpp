@@ -103,24 +103,44 @@ int demo2DArrayUsingIndexs() {
 }
 
 
-
+void demoStructuralBinding()
+{
+	struct Point { int x, y; };
+	Point p{ 3,4 };
+	auto [a, b] = p;
+	cout << "a=p.x : " << a << std::endl << "b=p.y : " << b << std::endl;
+}
 int main()
 {
+	ns_templates::demo_templates();      
+	return 0;
+	// ns_variadic_templates::demoRecursionWithVariadicTemplates(); 
+	// ns_variadic_templates::demoVeriadicTemplateUsingFoldExpression();
+	//ns_variadic_templates::demoVeriadicTemplateClass();
+
+	demoStructuralBinding();
+	return 0;
+
+	ArrayDemo ad;
+	ad.demoAutoRangeBasedAccess();
+	ad.demo_arrays();
+	return 0;
+
+	ns_wkptr::demo_pass_smartptrs_to_func();
+	return 0;
+	
 	ns_classsize::demo_sizeof_derived_class();
 	demoBind();
 	ns_move_semantics::demo_moveConstructible_moveAssignable();
 	return 0;
-
-
+	
 	diamondprob::demo();
 	return 0;
 	
 	//float f{ 4 }; // works 
 	// int i{3.4}; // does not compile
 	
-	ArrayDemo ad;
-	ad.demoAutoRangeBasedAccess();
-	ad.demo_arrays();
+	
 
 	//ns_static::demo_static();
 	//ns_templates::demo_templates();
@@ -175,10 +195,6 @@ int main()
 	ns_move_semantics::demoPerfectForwarding();
 	ns_move_semantics::demoRValue();
 	ns_misc::ns_constexpr::demoConstExpr();
-	//ns_templates::demo_templates();      
-	// ns_variadic_templates::demoRecursionWithVariadicTemplates(); 
-	ns_variadic_templates::demoVeriadicTemplateUsingFoldExpression();
-	//ns_variadic_templates::demoVeriadicTemplateClass();
 	*/
 
 	//ns_thread::demo(); 

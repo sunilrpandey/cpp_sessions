@@ -30,7 +30,8 @@ namespace ns_wkptr
 		void setFriend(shared_ptr<Person> pA) {
 			friend_ = pA;
 		}
-		void showFriend() {
+		void showFriend() { 
+
 			if (!friend_.expired())  // check if obj is still alive
 				friend_.lock()->show(); // use lock to invoke shared_ptr
 			else

@@ -101,7 +101,7 @@ public:
         twoDArray.showArrayElements();
         cout << "\nElement at (0,3) should be 4 and what I got is :  " << twoDArray(0, 3);
 
-#if 0 // needed to overload [][]
+#if 1 // needed to overload [][]
         {
             cout << "\nElement at [0][3] should be 4 and what I got is :  " << twoDArray[0][3];
             twoDArray[0][3] = 76;
@@ -132,9 +132,9 @@ public:
     {
 
         demoArray();
-        //demoMultiDimentionalArray();
+        demoMultiDimentionalArray();
 
-        //demo2DArrayManagerClass();
+        demo2DArrayManagerClass();
 
         demoVerifyArrayPassedbyRef();
 

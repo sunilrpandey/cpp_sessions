@@ -23,6 +23,7 @@ namespace ns_variadic_templates
 		((std::cout << args << " "), ...);
 	}
 
+
 	int demoVeriadicTemplateUsingFoldExpression() {
 		printValues(1, 2, 3, "hello", 3.14);
 		return 0;

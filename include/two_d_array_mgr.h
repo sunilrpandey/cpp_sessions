@@ -69,16 +69,17 @@ public:
     int& operator()(int r, int c) {
         return pDynArray[r][c];
     }
+
     ~TwoDArrayManager() {
         deallocateMemory();
     }
 
-    //need to check if it works , though not safe if caller does not know size of rows and try to access
-    int* operator[](int row_index) {
-        return pDynArray[row_index];
-    }
+    ////need to check if it works , though not safe if caller does not know size of rows and try to access
+    //int* operator[](int row_index) {
+    //    return pDynArray[row_index];
+    //}
     
-#if 0 // needed to overload [][]
+#if 1 // needed to overload [][]
 private:
     class Row
     {

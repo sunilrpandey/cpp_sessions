@@ -1,25 +1,28 @@
 #include "common.h"
 #include "templates_basics.h"
 #include "template_meta_prog.h"
+#include "template_array.h"
+#include "template_sized_array.h"
+
+//function written using templates are function template (blueprint )and instance out of it is template function
+// if classic function is there it will have followed by specialized template function and then template function
 
 namespace ns_templates {
 
-	void demoTemplateFunction()
+	void demoFunctionTemplates()
 	{
+		//Template type deduction 
 		cout << Max(5, 10);
-		cout << Max(5.5f, 10.5f);
-
-
+		cout << Max(5.5f, 10.5f); // if classic function is available compiler wont generate it for float
 		cout << Max(KString("KPIT"), KString("Technologies"));
-
-		cout << Max(5, 10.0);
+		//cout << Max(5, 10.0); // Since two types it will  call two template param version.. 
 		cout << Max(static_cast<float>(5), 10.5f);
 
 		//cout << Max('a', 'b');
 
 
 
-		cout << Max(2, 3.5);
+		//cout << Max(2.0, 3.5);
 
 		//cout << "\nFactorial : " << print<5>();
 	}
@@ -59,15 +62,17 @@ namespace ns_templates {
 	}
 	void demo_templates()
 	{
-		cout << "\nDemo : Template MetaProgramming" << endl;
-		ns_templates::demo_factorial_using_meta_programming();
-
+		
 		cout << "Demo : Template Functions" << endl;
-		demoTemplateFunction();
+		demoFunctionTemplates();
 
+		/*
 		cout << "Demo : Template Class" << endl;
 		demoTemplatesClass();
 
+		cout << "\nDemo : Template MetaProgramming" << endl;
+		ns_templates::demo_factorial_using_meta_programming();
+		*/
 	}
 };
 

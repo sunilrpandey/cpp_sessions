@@ -4,7 +4,7 @@
 template <typename T>
 T Max(T a, T b)
 {
-	cout << "\ncalling template function" << endl;
+	cout << "\nCalling function template" << endl;
 	if (a >= b)
 		return a;
 
@@ -36,7 +36,7 @@ float Max(float a, float b)
 template <>
 float Max(float a, float b)
 {
-	cout << "\ncalling non template function" << endl;
+	cout << "\ncalling specialized template function" << endl;
 
 	if (a >= b)
 		return a;
@@ -56,78 +56,7 @@ T Max(T a, S b)
 	return b;
 }
 
-template <typename T>
-class Array
-{
-public:
-	Array(int size) {
-		size_ = size;
-		data = new T[size_];
-		for (int i = 0; i < size_; i++) {
-			data[i] = 0;
-		}
-	}
-	Array(const Array& rhs) { // Copy constructor
-		size_ = rhs.size_;
-		data = new T[size_];
-		for (int i = 0; i < size_; i++) {
-			data[i] = rhs.data[i];
-		}
-	}
-	void print() {
-		cout << endl << "Array Elements : ";
-		for (int i = 0; i < size_; i++) {
-			cout << data[i] << "  ";
-		}
-		cout << endl;
-	}
 
-	T& operator [] (int index) {
-		return data[index];
-	}
-	~Array() {
-		delete[] data;
-
-	}
-private:
-	T* data;
-	int size_;
-};
-
-template <typename T, int size>
-class SizedArray
-{
-public:
-	SizedArray() {
-		size_ = size;
-		data = new T[size_];
-	}
-	SizedArray(const SizedArray& rhs) {
-		size_ = rhs.size_;
-		data = new T[size_];
-		for (int i = 0; i < size_; i++) {
-			data[i] = rhs.data[i];
-		}
-	}
-	void print() {
-		cout << endl << "Array Elements : ";
-		for (int i = 0; i < size_; i++) {
-			cout << data[i] << "  ";
-		}
-		cout << endl;
-	}
-
-	T& operator [] (int index) {
-		return data[index];
-	}
-	~SizedArray() {
-		delete[] data;
-
-	}
-private:
-	T* data;
-	int size_;
-};
 
 
 
