@@ -90,6 +90,37 @@ auto Max(T a, S b) -> decltype((a>b)?a:b) // auto here is just a placeholder whi
 	return b;
 }
 
+decltype(auto) Max(T a, S b)
+{
+	if (a >= b)
+		return a;
+
+	return b;
+}
+
+//In C++, the ternary operator ? : promotes both operands to a common type(which is usually the more general type) to avoid precision loss.
+// In this case, the common type will be double, because double can represent both integerand floating - point values,
+// whereas int cannot represent floating - point values without losing precision.
+
+
+-> Default argument
+template <typename ReturnType = int, typename T, typename S>
+	ReturnType GetMax(T a, S b) {
+
+	you can use default argument or override, make sure to specify return type 
+	auto res = GetMax(100.5, 12.5); // default return type is int
+		cout << "Sizeof Return Type : " << sizeof(res) << " and value : " <<  res << endl;
+		auto r = GetMax<double, int>(100.5, 12.5);
+
+
+One can have non type template parameter but only integral types are allowed as on C++ 20
+	template<typename T, int size>
+	void printCollection(T collection[]) {
+		for (auto i = 0; i < size; i++) {
+			std::cout << collection[i] << "  ";
+		}
+		std::cout << endl;
+	}
 */
 
 namespace ns_templates {
@@ -193,11 +224,48 @@ namespace ns_templates {
 		std::cout << "sizeof(a) : " << sizeof(a) << "\nsizeof(b) : " << sizeof(b) << "\nsizeof(c) : " << sizeof(c);
 		//std::cout << "sizeof(int) : " << sizeof(int) << "\nsizeof(double) : " << sizeof(double) << "\nsizeof(char) : " << sizeof(char) << "\nsizeof(c) : " << sizeof(c);
 	}
+
+	template <typename ReturnType = int, typename T, typename S>
+	ReturnType GetMax(T a, S b) {
+		if (a >= b)
+			return a;
+		else
+			return b;
+	}
+
+	void demoDefaultArgument() {
+		auto res = GetMax(100.5, 12.5); // default return type is int
+		cout << "Sizeof Return Type : " << sizeof(res) << " and value : " <<  res << endl;
+		auto r = GetMax<double, int>(100.5, 12.5);
+		cout << "Sizeof Return Type : " << sizeof(r) << " and value : " << r << endl;
+	}
+
+	template<typename T, int size>
+	void printCollection(T collection[]) {
+		for (auto i = 0; i < size; i++) {
+			std::cout << collection[i] << "  ";
+		}
+		std::cout << endl;
+	}
+
+	void demoNonTypeTemplateParameter() {
+		cout << "Demo : Non Type Template Parameter" << endl;
+		float arr[3] = { 2.3,4.5,6.7 };
+		printCollection<float, 3>(arr);
+	}
+
 	void demo_templates()
 	{
+		demoNonTypeTemplateParameter();
+		return;
+
 		//demo_declType();
 		//return;
-		
+
+		cout << "Demo : Default Argument" << endl;
+		demoDefaultArgument();
+		return;
+
 		cout << "Demo : Template Functions" << endl;
 		demoFunctionTemplates();
 		demo_TwoParamFunctionTemplates();
