@@ -51,7 +51,7 @@ T Max(T a, S b)
 	return b;
 }
 
-/*
+
 template <typename ReturnType typename T, typename S>
 //template < typename T,typename ReturnType , typename S>
 //template < typename T, typename P,typename ReturnType >
@@ -62,6 +62,34 @@ ReturnType Max(T a, S b)
 
 	return b;
 }
+
+but cleaner way would be 
+template <typename T, typename P>
+auto maximum ( T a, P b){
+	return (a > b)? a : b;
+}
+
+decltype is used to deduce type of expression 
+e.g. sizeof(decltype((a>b)?a:b))
+
+decltype((a>b)?a:b) c;
+
+-> decltype as return type
+decltype((a>b)?a:b) Max(T a, S b){ // will get error since a, b in decltype are used before they are declareed in param list, to make it trailing 
+	if (a >= b)
+		return a;
+
+	return b;
+}
+make it trailing
+auto Max(T a, S b) -> decltype((a>b)?a:b) // auto here is just a placeholder which will be deduced by decltype
+{ 
+	if (a >= b)
+		return a;
+
+	return b;
+}
+
 */
 
 namespace ns_templates {
@@ -99,6 +127,23 @@ namespace ns_templates {
 		cout << "\n(T* version) | Max of (x,y) : " << *m2;
 	}
 
+	void Demo_Max_TwoParams_auto_returnType() {
+
+		auto mx = Max_TwoParams_auto_returnType(12, 30); // will not work for (12,30.0)
+		cout << "\nMax of (12,30) is : " << mx;
+
+		auto mx1 = Max_TwoParams_auto_returnType_trailing_declType(12, 30); // will work for (12,30.0) too
+		cout << "\nMax of (12,30) is  (trailing decltype): " << mx1;
+
+		auto mx2 = Max_TwoParams_auto_returnType_trailing_declType(122, 30.5); 
+		//cout << "\nsizeof(mx2)"<<  sizeof(mx2); // due to ternary operator in decltype sizeof mx2 is 8 i.e. double
+		cout << "\nMax of (12,30.0) is (trailing decltype): " << mx2;
+
+		auto mx3 = Max_TwoParams_auto_returnType_decltye_auto(12, 30.5);
+		cout << "\nMax of (12,30.5) is (demo decltype(auto)): " << mx3;
+
+	}
+
 	void demoTemplatesClass()
 	{
 
@@ -133,12 +178,31 @@ namespace ns_templates {
 		}
 
 	}
-
+	void demo_TwoParamFunctionTemplates() {
+		cout << "\nDemo-TwoParamFunctionTemplates" << endl;
+		auto x{ 5 };
+		auto y{ 10.5 };
+		auto mx = Max_TwoParams<int, int, double>(x, y);
+		cout << mx;
+	}
+	
+	void demo_declType() {
+		int a{ 100};
+		double b{ 30.0 };
+		decltype((a > b) ? a : b) c;
+		std::cout << "sizeof(a) : " << sizeof(a) << "\nsizeof(b) : " << sizeof(b) << "\nsizeof(c) : " << sizeof(c);
+		//std::cout << "sizeof(int) : " << sizeof(int) << "\nsizeof(double) : " << sizeof(double) << "\nsizeof(char) : " << sizeof(char) << "\nsizeof(c) : " << sizeof(c);
+	}
 	void demo_templates()
 	{
+		//demo_declType();
+		//return;
 		
 		cout << "Demo : Template Functions" << endl;
 		demoFunctionTemplates();
+		demo_TwoParamFunctionTemplates();
+		Demo_Max_TwoParams_auto_returnType();
+
 
 		/*
 		cout << "Demo : Template Class" << endl;
