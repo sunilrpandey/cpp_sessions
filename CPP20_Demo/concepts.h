@@ -60,8 +60,6 @@ T add4( T a, T b)// requires std::integral<T>
     return a + b;
 }
 
-
-
 void demoBuiltInConcepts()
 {
 	char a0{ 10 };
@@ -81,4 +79,17 @@ void demoBuiltInConcepts()
 	//auto res3 = add(c0, c1);
 	//std::cout << "res3 : " << res3 << std::endl;
 	
+}
+
+std::integral auto addIntegrals(std::integral auto a, std::integral auto b) {
+	return a + b;
+}
+
+void demoConceptAndAuto() 
+{
+	auto res = addIntegrals(10, 12); //works
+	std::integral auto res1 = addIntegrals(100, 102); //works
+	
+	//does not work since auto type deduction is being constraind by std::floating_point concpet
+	//std::floating_point auto res1 = addIntegrals(100, 102); //does not work
 }

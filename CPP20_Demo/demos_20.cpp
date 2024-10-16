@@ -4,6 +4,14 @@
 #include "concepts.h"
 #include "custom_concepts.h"
 #include "requires.h"
+#include "combining_concepts.h"
+
+#include "DesignatedInitializers.h"
+
+// in memeber wise init object is already created but in initilizer list members are initialized during object created,
+// array has copies of object created
+//for(ojb o : o_array) copies
+
 
 void func_int(int) {
 	std::cout << "int param" << std::endl;
@@ -38,8 +46,11 @@ int main()
 
 	//demoBuiltInConcepts();
 	//demoCustomConcepts();
+	//demoRequires();
+	//demoCombiningConcepts();
+	// demoConceptAndAuto();
 
-	demoRequires();
+	demoDesignatedInitializers();
 
 	return 0;
 }
