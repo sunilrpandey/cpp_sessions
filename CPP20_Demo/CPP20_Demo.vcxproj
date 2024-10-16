@@ -133,6 +133,7 @@
   <ItemGroup>
     <ClInclude Include="concepts.h" />
     <ClInclude Include="custom_concepts.h" />
+    <ClInclude Include="requires.h" />
     <ClInclude Include="templates_ext.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

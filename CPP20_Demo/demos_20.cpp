@@ -3,7 +3,7 @@
 #include "templates_ext.h"
 #include "concepts.h"
 #include "custom_concepts.h"
-
+#include "requires.h"
 
 void func_int(int) {
 	std::cout << "int param" << std::endl;
@@ -37,7 +37,9 @@ int main()
 	//demoConstExprIf();
 
 	//demoBuiltInConcepts();
-	demoCustomConcepts();
+	//demoCustomConcepts();
+
+	demoRequires();
 
 	return 0;
 }
