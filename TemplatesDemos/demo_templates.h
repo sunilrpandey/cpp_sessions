@@ -114,13 +114,47 @@ template <typename ReturnType = int, typename T, typename S>
 
 
 One can have non type template parameter but only integral types are allowed as on C++ 20
-	template<typename T, int size>
+	template<typename T, int size> // non type param 'int size' can be first param as wll 
 	void printCollection(T collection[]) {
 		for (auto i = 0; i < size; i++) {
 			std::cout << collection[i] << "  ";
 		}
 		std::cout << endl;
 	}
+
+	-> auto function templates in cpp20
+	auto funcAdd(auto a, auto b) {
+		return a + b;
+	}
+
+	void demoAutoFunctionTemplates()
+	{
+		auto r = funcAdd(5.0, 10);
+		cout << "size : " << sizeof(r) << " value : " << r;
+
+	}
+	C++ 17 implementation for the same
+	template<typename T, typename S>
+	decltype(auto) funcAdd(T a, S b) {
+		return a + b;
+	}
+
+	Another CPP 20 addition
+	Named Template Parameters for lambda func
+	void demoNamedTemplateParameters() {
+		auto func = [] <typename T, typename P>(T a, P b) {
+			return a + b;
+		};
+
+		char a{ 'c' };
+		int b{ 63 };
+
+		auto result = func(a, b);
+		std::cout << "result : " << result << std::endl;
+		std::cout << "sizeof(result) : " << sizeof(result) << std::endl;
+	}
+
+
 */
 
 namespace ns_templates {
@@ -254,8 +288,55 @@ namespace ns_templates {
 		printCollection<float, 3>(arr);
 	}
 
+	template<typename T, typename S>
+	decltype(auto) funcAdd(T a, S b) {
+		return a + b;
+	}
+	void demoAutoFunctionTemplates()
+	{
+		cout << "\nDemo : Alternate impl of Auto Function Templates in CPP 20" << endl;
+		auto r = funcAdd(5.0, 10);
+		cout << "size : " << sizeof(r) << " value : " << r;
+
+	}
+
+	/* CPP20
+	// supported in cpp 20 onwards
+	auto funcAdd(auto a, auto b) {
+		return a + b;
+	}
+
+	void demoAutoFunctionTemplates()
+	{
+		auto r = funcAdd(5.0, 10);
+		cout << "size : " << sizeof(r) << " value : " << r;
+
+	}
+
+	void demoNamedTemplateParameters() {
+		auto func = [] <typename T, typename P>(T a, P b) {
+			return a + b;
+		};
+
+		char a{ 'c' };
+		int b{ 63 };
+
+		auto result = func(a, b);
+		std::cout << "result : " << result << std::endl;
+		std::cout << "sizeof(result) : " << sizeof(result) << std::endl;
+	}
+	*/
+
+
+
 	void demo_templates()
 	{
+		//demoNamedTemplateParameters();
+		//return;
+
+		demoAutoFunctionTemplates();
+		return;
+
 		demoNonTypeTemplateParameter();
 		return;
 

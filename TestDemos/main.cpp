@@ -24,7 +24,7 @@
 #include "demo_classsize_in_diamond_case.h"
 #include "demo_diamond_prob.h"
 #include "demo_static_member.h"
-#include "demo_templates.h"
+//#include "demo_templates.h"
 
 
 void demo_uniqueptr_get_exposes_ptr()
@@ -112,12 +112,7 @@ void demoStructuralBinding()
 }
 int main()
 {
-	ns_templates::demo_templates();      
-	return 0;
-	// ns_variadic_templates::demoRecursionWithVariadicTemplates(); 
-	// ns_variadic_templates::demoVeriadicTemplateUsingFoldExpression();
-	//ns_variadic_templates::demoVeriadicTemplateClass();
-
+	
 	demoStructuralBinding();
 	return 0;
 
