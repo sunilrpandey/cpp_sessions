@@ -58,12 +58,12 @@ void demoCustomConcepts()
 	float a1{ 20.5 };
 
 	auto res1 = custom_add3(a0, a1); // concept is multipliable 
-	std::cout << "res1 : " << static_cast<int>(res1) << std::endl;
+	std::cout << "concpet Multiable -> res1 : " << static_cast<int>(res1) << std::endl;
 
 	int b0{ 11 };
 	int b1{ 5 };
 	auto res2 = custom_add1(b0, b1);
-	std::cout << "res2 : " << res2 << std::endl;
+	std::cout << "concpet Integral -> res2 : " << res2 << std::endl;
 
 	//
 	//double c0{ 11.1 };
@@ -71,4 +71,10 @@ void demoCustomConcepts()
 	//auto res3 = custom_add3(c0, c1);
 	//std::cout << "res3 : " << res3 << std::endl;
 
-}
+	std::string s0{ "Hello"};
+	std::string s1{ "World"};
+	auto res3 = custom_add4(s0, s1); //custom_add3 -> multipliable concpet wont work here, will give compilation error
+	std::cout << "concpet Addable -> res3 : " << res3 << std::endl;
+
+
+} 

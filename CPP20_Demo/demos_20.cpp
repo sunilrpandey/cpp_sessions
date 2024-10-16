@@ -36,7 +36,7 @@ int main()
 	//demoTypeTraits();
 	//demoConstExprIf();
 
-	demoBuiltInConcepts();
+	//demoBuiltInConcepts();
 	demoCustomConcepts();
 
 	return 0;
