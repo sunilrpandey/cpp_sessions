@@ -1,6 +1,7 @@
 #include <iostream>
 #include <type_traits>
 #include "templates_ext.h"
+#include "concepts.h"
 
 
 void func_int(int) {
@@ -32,7 +33,10 @@ int main()
 	//demoNamedTemplateParameters();
 
 	//demoTypeTraits();
-	demoConstExprIf();
+	//demoConstExprIf();
+
+	demoConcepts();
+
 
 
 

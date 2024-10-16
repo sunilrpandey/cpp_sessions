@@ -131,6 +131,7 @@
     <ClCompile Include="demos_20.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="concepts.h" />
     <ClInclude Include="templates_ext.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
