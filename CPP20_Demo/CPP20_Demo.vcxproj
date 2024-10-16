@@ -18,63 +18,11 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="..\include\CMakeLists.txt" />
-    <Text Include="CMakeLists.txt" />
-    <Text Include="emp.txt" />
-    <Text Include="plans.txt" />
-    <Text Include="test.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\include\common.h" />
-    <ClInclude Include="..\include\custom_shared_pointer.h" />
-    <ClInclude Include="..\include\custom_smart_pointer.h" />
-    <ClInclude Include="..\include\custom_unique_pointer.h" />
-    <ClInclude Include="..\include\employee.h" />
-    <ClInclude Include="..\include\friends.h" />
-    <ClInclude Include="..\include\KString.h" />
-    <ClInclude Include="..\include\templates_basics.h" />
-    <ClInclude Include="..\include\template_array.h" />
-    <ClInclude Include="..\include\template_sized_array.h" />
-    <ClInclude Include="..\include\two_d_array_mgr.h" />
-    <ClInclude Include="demo_array.h" />
-    <ClInclude Include="demo_auto_few_algo.h" />
-    <ClInclude Include="demo_bind.h" />
-    <ClInclude Include="demo_classsize_in_diamond_case.h" />
-    <ClInclude Include="demo_consyt_expr.h" />
-    <ClInclude Include="demo_custom_smart_pointer.h" />
-    <ClInclude Include="demo_diamond_prob.h" />
-    <ClInclude Include="demo_employee.h" />
-    <ClInclude Include="demo_enums.h" />
-    <ClInclude Include="demo_exception_handling.h" />
-    <ClInclude Include="demo_friends.h" />
-    <ClInclude Include="demo_inheritance.h" />
-    <ClInclude Include="demo_initializer_list.h" />
-    <ClInclude Include="demo_kstring.h" />
-    <ClInclude Include="demo_lambda_func.h" />
-    <ClInclude Include="demo_LValue_RValue.h" />
-    <ClInclude Include="demo_misc.h" />
-    <ClInclude Include="demo_move_semantics.h" />
-    <ClInclude Include="demo_perfect_forwarding.h" />
-    <ClInclude Include="demo_smart_pointers.h" />
-    <ClInclude Include="demo_static_member.h" />
-    <ClInclude Include="demo_templates.h" />
-    <ClInclude Include="demo_user_defined_literals.h" />
-    <ClInclude Include="demo_virtual_operatoroverload.h" />
-    <ClInclude Include="demo_weak_ptr.h" />
-    <ClInclude Include="file_manger_demo.h" />
-    <ClInclude Include="ptrs_basics.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\include\employee.cpp" />
-    <ClCompile Include="..\include\KString.cpp" />
-    <ClCompile Include="main.cpp" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{4fc9ffd8-03c6-4750-9dbc-9c54d2e5354c}</ProjectGuid>
-    <RootNamespace>TestDemos</RootNamespace>
+    <ProjectGuid>{567517ed-68e9-45e1-a725-b528f9e433a2}</ProjectGuid>
+    <RootNamespace>CPP20Demo</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -157,7 +105,6 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -172,7 +119,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -181,6 +127,12 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="demos_20.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="templates_ext.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
