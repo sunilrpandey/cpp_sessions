@@ -62,7 +62,7 @@ T add4( T a, T b)// requires std::integral<T>
 
 
 
-void demoConcepts()
+void demoBuiltInConcepts()
 {
 	char a0{ 10 };
 	char a1{ 20 };

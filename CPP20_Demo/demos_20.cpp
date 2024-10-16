@@ -2,6 +2,7 @@
 #include <type_traits>
 #include "templates_ext.h"
 #include "concepts.h"
+#include "custom_concepts.h"
 
 
 void func_int(int) {
@@ -35,10 +36,8 @@ int main()
 	//demoTypeTraits();
 	//demoConstExprIf();
 
-	demoConcepts();
-
-
-
+	demoBuiltInConcepts();
+	demoCustomConcepts();
 
 	return 0;
 }
