@@ -1,5 +1,5 @@
 #include "common.h"
-#include "templates_basics.h"
+#include "func_templates_examples.h"
 #include "template_meta_prog.h"
 #include "template_array.h"
 #include "template_sized_array.h"
@@ -159,7 +159,7 @@ One can have non type template parameter but only integral types are allowed as 
 
 namespace ns_templates {
 
-	void demoFunctionTemplates()
+	void demoTypeDeductionAndExplicitArgs()
 	{
 		//--Template type deduction 
 		cout << "\nDemo : Template type deduction" << std::endl;
@@ -181,7 +181,7 @@ namespace ns_templates {
 
 	}
 
-	void functionTemplatesWithOverloading() {
+	void demoFunctionTemplatesWithOverloading() {
 		//calling overloaded functions
 		auto x{ 10 }, y{ 20 };
 
@@ -259,62 +259,93 @@ namespace ns_templates {
 		//std::cout << "sizeof(int) : " << sizeof(int) << "\nsizeof(double) : " << sizeof(double) << "\nsizeof(char) : " << sizeof(char) << "\nsizeof(c) : " << sizeof(c);
 	}
 
-	template <typename ReturnType = int, typename T, typename S>
-	ReturnType GetMax(T a, S b) {
-		if (a >= b)
-			return a;
-		else
-			return b;
-	}
+	// demoDefaultArgument
+	namespace ns_templates_default_args {
 
-	void demoDefaultArgument() {
-		auto res = GetMax(100.5, 12.5); // default return type is int
-		cout << "Sizeof Return Type : " << sizeof(res) << " and value : " <<  res << endl;
-		auto r = GetMax<double, int>(100.5, 12.5);
-		cout << "Sizeof Return Type : " << sizeof(r) << " and value : " << r << endl;
-	}
-
-	template<typename T, int size>
-	void printCollection(T collection[]) {
-		for (auto i = 0; i < size; i++) {
-			std::cout << collection[i] << "  ";
+		template <typename ReturnType = int, typename T, typename S>
+		ReturnType GetMax(T a, S b) {
+			if (a >= b)
+				return a;
+			else
+				return b;
 		}
-		std::cout << endl;
+
+		void demoDefaultArgument() {
+			cout << "Demo : Default Argument" << endl;
+			auto res = GetMax(100.5, 12.5); // default return type is int
+			cout << "Sizeof Return Type : " << sizeof(res) << " and value : " << res << endl;
+			auto r = GetMax<double, int>(100.5, 12.5);
+			cout << "Sizeof Return Type : " << sizeof(r) << " and value : " << r << endl;
+		}
 	}
 
-	void demoNonTypeTemplateParameter() {
-		cout << "Demo : Non Type Template Parameter" << endl;
-		float arr[3] = { 2.3,4.5,6.7 };
-		printCollection<float, 3>(arr);
+	namespace ns_templates_non_type_params
+	{
+		template<typename T, int size>
+		void printCollection(T collection[]) {
+			for (auto i = 0; i < size; i++) {
+				std::cout << collection[i] << "  ";
+			}
+			std::cout << endl;
+		}
+
+		void demoNonTypeTemplateParameter() {
+			cout << "Demo : Non Type Template Parameter" << endl;
+			float arr[3] = { 2.3,4.5,6.7 };
+			printCollection<float, 3>(arr);
+		}
 	}
 
 	template<typename T, typename S>
-	decltype(auto) funcAdd(T a, S b) {
+	decltype(auto) funcAdd_cpp17(T a, S b) {
 		return a + b;
 	}
-	void demoAutoFunctionTemplates()
+
+	void demoAutoFunctionTemplates_cpp17()
 	{
 		cout << "\nDemo : Alternate impl of Auto Function Templates in CPP 20" << endl;
-		auto r = funcAdd(5.0, 10);
+		auto r = funcAdd_cpp17(5.0, 10);
 		cout << "size : " << sizeof(r) << " value : " << r;
 
 	}
 
-	/* CPP20
-	// supported in cpp 20 onwards
-	auto funcAdd(auto a, auto b) {
-		return a + b;
+
+	#if __cplusplus >= 202002L
+	namespace ns_templates_cpp20 {
+
+		
+		
+		// supported in cpp 20 onwards
+		auto funcAdd(auto a, auto b) {
+			return a + b;
+		}
+
+		
+
+		void demoAutoFunctionTemplates()
+		{
+			auto r = funcAdd(5.0, 10);
+			cout << "size : " << sizeof(r) << " value : " << r;
+
+		}
+
+		void demoNamedTemplateParameters() {
+			auto func = [] <typename T, typename P>(T a, P b) {
+				return a + b;
+			};
+
+			char a{ 'c' };
+			int b{ 63 };
+
+			auto result = func(a, b);
+			std::cout << "result : " << result << std::endl;
+			std::cout << "sizeof(result) : " << sizeof(result) << std::endl;
+		}
 	}
+	#endif
 
-	void demoAutoFunctionTemplates()
-	{
-		auto r = funcAdd(5.0, 10);
-		cout << "size : " << sizeof(r) << " value : " << r;
-
-	}
-
-	void demoNamedTemplateParameters() {
-		auto func = [] <typename T, typename P>(T a, P b) {
+	void demoAutoLambdaParameters() {
+		auto func = [] (auto a, auto b) {
 			return a + b;
 		};
 
@@ -325,33 +356,37 @@ namespace ns_templates {
 		std::cout << "result : " << result << std::endl;
 		std::cout << "sizeof(result) : " << sizeof(result) << std::endl;
 	}
-	*/
-
-
 
 	void demo_templates()
 	{
+#define RUN_ALL_DEMO 0
+#if RUN_ALL_DEMO
+
+		cout << "Demo : Template Functions" << endl;
+		demoTypeDeductionAndExplicitArgs();
+		demo_TwoParamFunctionTemplates();
+		Demo_Max_TwoParams_auto_returnType();
+		demoFunctionTemplatesWithOverloading();
+		
+		ns_templates_non_type_params::demoNonTypeTemplateParameter();
+		ns_templates_default_args::demoDefaultArgument();
+
 		//demoNamedTemplateParameters();
 		//return;
 
-		demoAutoFunctionTemplates();
-		return;
-
-		demoNonTypeTemplateParameter();
-		return;
-
 		//demo_declType();
-		//return;
 
-		cout << "Demo : Default Argument" << endl;
-		demoDefaultArgument();
-		return;
-
-		cout << "Demo : Template Functions" << endl;
-		demoFunctionTemplates();
-		demo_TwoParamFunctionTemplates();
-		Demo_Max_TwoParams_auto_returnType();
-
+	#if __cplusplus >= 202002L 
+			ns_templates_cpp20::demoAutoFunctionTemplates();
+			return;
+	#else
+			demoAutoFunctionTemplates_cpp17();
+	#endif 
+		
+#endif
+		demoAutoLambdaParameters();
+		
+		
 
 		/*
 		cout << "Demo : Template Class" << endl;

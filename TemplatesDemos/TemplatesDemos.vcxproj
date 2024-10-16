@@ -105,6 +105,8 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)\include</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -129,14 +131,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\include\KString.cpp" />
-    <ClCompile Include="templates_demos.cpp" />
+    <ClCompile Include="demos.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\KString.h" />
-    <ClInclude Include="..\include\templates_basics.h" />
+    <ClInclude Include="..\include\func_templates_examples.h" />
     <ClInclude Include="..\include\template_array.h" />
     <ClInclude Include="..\include\template_sized_array.h" />
-    <ClInclude Include="demo_templates.h" />
+    <ClInclude Include="demo_func_templates.h" />
+    <ClInclude Include="demo_type_traits.h" />
     <ClInclude Include="template_meta_prog.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
