@@ -2,6 +2,8 @@
 #include <iostream>
 #include <memory>
 using namespace std;
+//after shared pointer(ptr5) .reset(), use_count of ptr5 would be zero but for other pointers it would be 
+// reduced by only 1
 
 namespace ns_smartptrs
 {
@@ -187,7 +189,11 @@ namespace ns_smartptrs
         //custom deleter for array object other wise it iwll not call [] delete
         {
             cout << "\nCreation/Deletion of unique ptrs for object array : ";
-            unique_ptr<Dog[]> sp_arr(new Dog[3]);
+            //unique_ptr<Dog[]> sp_arr(new Dog[3]);
+            //unique_ptr<Dog[]> sp_arr(new Dog[3]{Dog("Dog1"),Dog("Dog2"),Dog("Dog3") });
+            //auto sp_arr = std::make_unique<Dog[]>(3); // init like above wont work with make_unique
+
+            auto sp_arr = std::unique_ptr<Dog[]>(new Dog[3]{ Dog("Dog1"),Dog("Dog2"),Dog("Dog3") });
             sp_arr[0].bark();
             sp_arr[1].bark();
             sp_arr[2].bark();
@@ -195,15 +201,34 @@ namespace ns_smartptrs
 
     }
 
+    void demo_arraySharedPtr()
+    {
+        //make_shared not supported for array
+        
+        std::shared_ptr<int[]> sp(new int[3] {2, 3, 4}); // cpp17
+        std::shared_ptr<Dog[]> spd(new Dog[3] {Dog("Dog1"), Dog("Dog2"), Dog("Dog3") }); // cpp17
+        for (int i = 0; i < 3; i++) {
+            cout << sp[i] << "  ";
+        }
+        for (int i = 0; i < 3; i++) {
+            spd[i].bark();
+        }
+
+    }
 
     void demo() {
+
+        demo_arraySharedPtr();
+        return;
+
         demoUniquePtr();
         demoUniquePointerToSharedPointer();
         demo_with_int_ptr();
         demo_basic_funcs();
         demo_custom_deleter();
-
         demo_arrayUniquePtr();
+
+        
     }
 
 }
