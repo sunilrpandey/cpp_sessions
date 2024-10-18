@@ -58,7 +58,6 @@
     <ClInclude Include="demo_perfect_forwarding.h" />
     <ClInclude Include="demo_smart_pointers.h" />
     <ClInclude Include="demo_static_member.h" />
-    <ClInclude Include="demo_templates.h" />
     <ClInclude Include="demo_user_defined_literals.h" />
     <ClInclude Include="demo_virtual_operatoroverload.h" />
     <ClInclude Include="demo_weak_ptr.h" />

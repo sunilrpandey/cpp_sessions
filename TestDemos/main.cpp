@@ -112,6 +112,11 @@ void demoStructuralBinding()
 }
 int main()
 {
+	/*
+	ns_static::demo_static();
+
+	return 0;
+
 	
 	demoStructuralBinding();
 	return 0;
@@ -136,11 +141,8 @@ int main()
 	// int i{3.4}; // does not compile
 	
 	
-
-	//ns_static::demo_static();
-	//ns_templates::demo_templates();
-	
-	//ns_smartptrs::demo();
+	*/
+	ns_smartptrs::demo();
 	//ns_wkptr::demo();
 	//ns_misc::demo();
 	
