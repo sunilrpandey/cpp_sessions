@@ -133,8 +133,10 @@
   <ItemGroup>
     <ClInclude Include="combining_concepts.h" />
     <ClInclude Include="concepts.h" />
+    <ClInclude Include="const_expr_if.h" />
     <ClInclude Include="custom_concepts.h" />
     <ClInclude Include="DesignatedInitializers.h" />
+    <ClInclude Include="range_algorithms.h" />
     <ClInclude Include="requires.h" />
     <ClInclude Include="templates_ext.h" />
   </ItemGroup>
