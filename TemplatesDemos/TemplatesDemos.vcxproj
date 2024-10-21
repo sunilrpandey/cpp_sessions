@@ -102,7 +102,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)\include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
@@ -138,6 +138,7 @@
     <ClInclude Include="..\include\func_templates_examples.h" />
     <ClInclude Include="..\include\template_array.h" />
     <ClInclude Include="..\include\template_sized_array.h" />
+    <ClInclude Include="adder.h" />
     <ClInclude Include="demo_func_templates.h" />
     <ClInclude Include="demo_type_traits.h" />
     <ClInclude Include="template_meta_prog.h" />
