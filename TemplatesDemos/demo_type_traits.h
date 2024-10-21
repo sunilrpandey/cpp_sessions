@@ -52,7 +52,4 @@ void demoBasicTypeTraits()
 	static_assert(std::is_integral_v<vector<int>> == false);
 	static_assert(std::is_integral_v<int[2]> == false);
 
-	//force input param
-
-	auto func = []<typename T>
 }
