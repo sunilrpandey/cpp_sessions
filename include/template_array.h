@@ -15,6 +15,7 @@ public:
 
 public:
 	void  print();
+	friend void printArraySize(Array<T> array);
 
 public: //-----setter/getter
 	size_t size() { return size_; }
@@ -25,16 +26,22 @@ private:
 
 };
 
+template <typename T>
+void printArraySize(Array<T> array) {
+
+	std::cout << "friend demo : Array Size : " << array.size_;
+
+}
+
 template<typename T>
 const int Array<T>::DEFAULT_SIZE = 8;
-
 
 template<typename T>
 Array<T>::Array(int size) {
 	size_ = size;
 	data = new T[size_];
 	for (int i = 0; i < size_; i++) {
-		data[i] = 0;
+		data[i] = 10;
 	}
 }
 

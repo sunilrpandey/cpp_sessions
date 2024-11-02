@@ -11,6 +11,12 @@ void demoGenericArray() {
 	cout << arr;	
 }
 
+void demoFriendFuncInClassTemplate() {
+	
+	Array<int> arr;
+	printArraySize(arr);	
+}
+
 void demoSpecializedClass() {
 	Adder<int> adder;
 	cout << "Demo - Adder[12,13] : " << adder.execute(12, 13);
