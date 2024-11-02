@@ -34,7 +34,10 @@ int main()
 
 	//demoDesignatedInitializers();
 
-	demoRangeAlgorithms();
+	//demoRangeAlgorithms();
+
+	//demoRangeAlgorithms_withIterPairs();
+	demoProjection();
 
 	return 0;
 }
