@@ -139,6 +139,7 @@
     <ClInclude Include="range_algorithms.h" />
     <ClInclude Include="requires.h" />
     <ClInclude Include="templates_ext.h" />
+    <ClInclude Include="threewayoperator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

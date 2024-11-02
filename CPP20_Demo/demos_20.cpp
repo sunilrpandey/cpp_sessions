@@ -10,6 +10,7 @@
 #include "const_expr_if.h"
 #include <vector>
 #include <algorithm>
+#include "threewayoperator.h"
 
 // in memeber wise init object is already created but in initilizer list members are initialized during object created,
 // array has copies of object created
@@ -20,6 +21,7 @@
 using namespace std;
 int main()
 {
+	demoThreewayOperator();
 	//demoAutoFunctionTemplates();
 	//demoNamedTemplateParameters();
 
@@ -37,7 +39,7 @@ int main()
 	//demoRangeAlgorithms();
 
 	//demoRangeAlgorithms_withIterPairs();
-	demoProjection();
+	//demoProjection();
 
 	return 0;
 }
