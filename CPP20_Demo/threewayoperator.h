@@ -12,6 +12,7 @@ public:
     // Defaulted three-way comparison operator, compares member wise, will compare name first
     //auto operator<=>(const Person& other) const = default; 
 
+    //to compare age implement like below
     auto operator<=>(const Person& other) const {
         return age <=> other.age;
     }
