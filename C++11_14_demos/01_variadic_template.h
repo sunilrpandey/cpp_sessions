@@ -63,11 +63,11 @@ void demo_operator_new_delete()
 {
 	{
 		for (int i = 0; i < 100; i++) {
-			int_storage[i] = i;
+			int_storage[i] = (i+1) * 123  ;
 		}
 
 		Test* t = new Test;
-		t->i = 1000;
+		//t->i = 1000;
 		cout << *t;
 
 		delete t;

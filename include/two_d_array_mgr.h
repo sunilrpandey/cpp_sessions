@@ -24,6 +24,7 @@ public:
     TwoDArrayManager operator = (TwoDArrayManager& rhs){
         if(rhs == *this)
             return *this;
+        //copy from target array
     }
     bool operator == (TwoDArrayManager& rhs) {
         if (rhs.pDynArray == this->pDynArray)
