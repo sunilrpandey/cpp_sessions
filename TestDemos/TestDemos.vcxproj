@@ -55,6 +55,7 @@
     <ClInclude Include="demo_LValue_RValue.h" />
     <ClInclude Include="demo_misc.h" />
     <ClInclude Include="demo_move_semantics.h" />
+    <ClInclude Include="demo_passobjects_lambda_cpp17.h" />
     <ClInclude Include="demo_perfect_forwarding.h" />
     <ClInclude Include="demo_smart_pointers.h" />
     <ClInclude Include="demo_static_member.h" />

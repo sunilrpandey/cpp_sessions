@@ -87,7 +87,7 @@ void demo_pass_smartptrs_to_func()
 void demo()
 {
 	demo_pass_smartptrs_to_func();
-	//demo_weakptrs();
+	demo_weakptrs();
 }
 };
 

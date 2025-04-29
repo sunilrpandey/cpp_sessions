@@ -4,7 +4,7 @@
 #include <vector>
 using namespace std;
 /*
-you can not change values inside lambda funciton if bit is not mutable
+you can not change values inside lambda funciton if it is not mutable
 also mutable will not change its value outside lambada if you dont pass this value as ref
 */
 

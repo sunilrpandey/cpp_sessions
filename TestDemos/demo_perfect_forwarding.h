@@ -25,6 +25,7 @@ namespace ns_move_semantics {
 	}
 	void relayWithoutPerfectForwarding_forInt(int&& val) {
 		show(val);
+
 	}
 	void relayWithPerfectForwarding_forInt(int&& val) {
 		show(std::forward<int>(val));
@@ -45,7 +46,13 @@ namespace ns_move_semantics {
 		cout << "\n\nForwarding now without using std::forward";
 		relayWithoutPerfectForwarding(std::move(i));
 		cout << "\n\nForwarding now with std::forward";
+		
+		//relayWithPerfectForwarding_forInt(i);
+		relayWithPerfectForwarding_forInt(std::move(i));
+			
+		relayWithPerfectForwarding(i);
 		relayWithPerfectForwarding(std::move(i));
+
 
 		// moving an object typically involves transferring ownership of the underlying resources 
 		// (e.g., dynamically allocated memory) from the source object to the destination object. 

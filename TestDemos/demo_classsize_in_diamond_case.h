@@ -24,7 +24,6 @@ namespace ns_classsize
         void dump(const std::string & msg) {
             cout << msg << endl;
         }
-
     };
     class MidDer1 : public virtual Base {
     public:

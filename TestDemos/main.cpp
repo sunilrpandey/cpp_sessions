@@ -25,6 +25,7 @@
 #include "demo_diamond_prob.h"
 #include "demo_static_member.h"
 //#include "demo_templates.h"
+#include "demo_passobjects_lambda_cpp17.h"
 
 
 void demo_uniqueptr_get_exposes_ptr()
@@ -112,6 +113,8 @@ void demoStructuralBinding()
 }
 int main()
 {
+	demoPassThisToMemeberFunc();
+	//ns_wkptr::demo();
 	/*
 	ns_static::demo_static();
 
@@ -142,7 +145,7 @@ int main()
 	
 	
 	*/
-	ns_smartptrs::demo();
+	//ns_smartptrs::demo();
 	//ns_wkptr::demo();
 	//ns_misc::demo();
 	
@@ -197,6 +200,8 @@ int main()
 	//ns_thread::demo(); 
 	 
 	//demo_oo();
+
+
 
 	return 0;  
 }    
