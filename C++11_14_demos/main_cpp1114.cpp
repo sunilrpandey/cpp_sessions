@@ -3,7 +3,20 @@
 #include "03_std_unique_ptrs.h"
 #include <functional>
 #include <assert.h>
+<<<<<<< HEAD
+=======
 
+int ly_add(int i, int j, int k) {
+	return i - j - k;
+}
+>>>>>>> 66ce17f19a24c5d0de892d659c071bb04adbe366
+
+void testBind() {
+	auto funPow3 = std::bind(ly_add, 20, placeholders::_2, 5); //20 and 5 are hardcoded as first/third arg
+	auto answer = funPow3(10, 3); //placeholders::_2 means 3 woudl be passed as second arg, 10 as first param would be ignored. 
+	assert(answer == 12);
+
+}
 int main()
 {
 	//demo_rvalue_refs();
