@@ -73,5 +73,37 @@ namespace ns_thread {
 		std::cout << "\n still in main thread..\n";
 		t.join();
 	}
+
+	int fact_using_shared_future(std::shared_future<int> sf) {
+
+		auto n = sf.get();
+
+		return fact(n);;
+	}
+	void fact2(std::shared_future<int> sf) {
+
+		auto n = sf.get();
+
+		std::cout << "Fact 2 : " <<  fact(n) << std::endl;
+
+
+	}
+
+
+	void demo_shared_future() {
+		std::promise<int> p;
+		std::future<int> f = p.get_future();
+		std::shared_future<int> sf = f.share(); 
+		// is necessory for multiple calls since you can call get on future only once
+		auto f1 = std::async(std::launch::async | std::launch::deferred
+			, fact_using_shared_future
+			, sf);
+		std::thread t(fact2, sf);
+		p.set_value(6);
+		cout << "Factorial (SF) : " << f1.get();
+		t.join();
+
+
+	}
 }
 

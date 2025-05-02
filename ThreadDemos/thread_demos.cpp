@@ -16,7 +16,9 @@ int main()
 	//ns_thread::demo_future();
 
 	//ns_thread::demo_promise();
-	ns_thread::demo_promise_as_onetime_event_barrier();
+	//ns_thread::demo_promise_as_onetime_event_barrier();
+
+	ns_thread::demo_shared_future();
 
 	return 0;
 } 
