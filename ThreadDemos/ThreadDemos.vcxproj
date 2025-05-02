@@ -136,6 +136,7 @@
     <ClInclude Include="02_sync_using_mutex.h" />
     <ClInclude Include="04_order_condition_variable.h" />
     <ClInclude Include="05_future_promise.h" />
+    <ClInclude Include="06_packaged_tasks.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
