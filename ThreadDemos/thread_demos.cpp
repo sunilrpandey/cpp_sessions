@@ -13,7 +13,10 @@ int main()
 	//ns_thread_sync::demo_race_condition_and_resolution();
 
 	//ns_thread::demo_ordering_using_condition_variable();
-	ns_thread::demo_future();
+	//ns_thread::demo_future();
+
+	//ns_thread::demo_promise();
+	ns_thread::demo_promise_as_onetime_event_barrier();
 
 	return 0;
 } 
