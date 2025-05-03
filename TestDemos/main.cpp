@@ -26,7 +26,7 @@
 #include "demo_static_member.h"
 //#include "demo_templates.h"
 #include "demo_passobjects_lambda_cpp17.h"
-
+#include "demo_perfect_forwarding_multi_args.h"
 
 void demo_uniqueptr_get_exposes_ptr()
 {
@@ -113,7 +113,9 @@ void demoStructuralBinding()
 }
 int main()
 {
-	demoPassThisToMemeberFunc();
+	demo_perfect_forwarding_multi_arg();
+
+	//demoPassThisToMemeberFunc();
 	//ns_wkptr::demo();
 	/*
 	ns_static::demo_static();
